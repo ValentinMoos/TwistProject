@@ -1,0 +1,32 @@
+\ifdefined\mainprogram{}
+\else
+\include{head}
+\fi
+
+\section{Tipps and Tricks}
+\begin{itemize}
+	\item $\int _0^1 \dx u  f(u,\overline u) = \int _0^1 \dx \overline u  f(\overline u, u)$
+	\item Gamma function properties
+	\item index $\mu$ is transverse!!!! has more implications than one might think!
+\end{itemize}
+
+
+Aux:
+\begin{align}
+	\partial_{x^\alpha} \frac{1}{ \left(-(z-x)^2+\imag\epsilon\right)^{n}}
+	&=
+	\frac{-2n(x-z)_\alpha}{ \left(-(z-x)^2+\imag\epsilon\right)^{n+1}}
+	\\
+	\partial_{z^\mu}\partial_{x^\alpha} \frac{1}{ \left(-(z-x)^2+\imag\epsilon\right)^{n}}
+	&=
+	\partial_{z^\mu}\frac{-2n(x-z)_\alpha}{ \left(-(z-x)^2+\imag\epsilon\right)^{n+1}}
+	\\
+	&=
+	\frac{4n(n+1)(z-x)_\mu(x-z)_\alpha}{ \left(-(z-x)^2+\imag\epsilon\right)^{n+2}} + 
+	\frac{2n\metric_{\mu\alpha}}{ \left(-(z-x)^2+\imag\epsilon\right)^{n+1}}
+\end{align}
+
+\ifdefined\mainprogram{}
+\else
+\include{end}
+\fi

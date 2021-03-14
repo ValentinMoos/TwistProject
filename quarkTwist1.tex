@@ -1,0 +1,121 @@
+\section{twist2}
+have operator (fraction):
+\begin{align}
+\twoq{1}(z) 
+&=
+\wil{-\infty n }{zn} q(zn)
+\end{align}
+For one loop I have to take linear term of wilson line and inlcude first order of interaction Hamiltionian. Thus
+\begin{align}
+	A=\left[-\imag g \int_{-\infty}^ {z} \dx \sigma \Aqu^+(\sigma n)\right] q(zn) \left(\imag g \int \dx ^d x \qbar(x) \slashed \Aqu (x) q(x)\right)
+\end{align}
+I do not write the contractions since they are clear and I am lazy. result: 
+we shift z to 0 because it does not matter  and makes it easier. ACTUALLY:: this is a dangerous move. doing it carefully and not much more difficult, one shifts integration variable $x$ such that z is  dropped in propagators. However it remains in integration in wilson line AND also in quark field shift. thus care and understand that in the end the quark field position is shifted by $+z$. Important mistake I made at some point: the integration limit $0$ is NOT SHIFTED! it is $0$ for any $z$! Mid calculation shift : $x = x + \overline\alpha \sigma n$ note that $n$ is a light-like vector
+\begin{align}
+	A
+	&=
+	-(\imag g)^2C_F \int_{-\infty}^{z} \dx \sigma \int \dx ^d x n^\mu \frac{-1}{4\pi^{\frac{d}{2}}}\frac{\Gamma\left(\frac{d}{2}-1\right)}{\left(-(x-\sigma n)^2 + \imag \epsilon\right)^{\frac{d}{2}-1}}\frac{-\imag \Gamma\left(\frac{d}{2}\right)}{2\pi^{\frac{d}{2}}}\frac{\slashed x}{\left(-x^2+\imag \epsilon \right)^{\frac{d}{2}}}\gamma_\mu q(x)
+	\\
+	&=
+	-(\imag g)^2C_F \int_{-\infty}^{z} \dx \sigma \int \dx ^d x \frac{\imag\Gamma\left(\frac{d}{2}-1\right) \Gamma\left(\frac{d}{2}\right)}{8\pi^{d}}\frac{\slashed x}{\left(-(x-\sigma n)^2 + \imag \epsilon\right)^{\frac{d}{2}-1}\left(-x^2+\imag \epsilon \right)^{\frac{d}{2}}}\gamma^+ q(x)
+	\\
+	&=
+	-(\imag g)^2C_F \int_{-\infty}^{z} \dx \sigma \int \dx ^d x \int_0^1 \dx \alpha \frac{\imag \Gamma\left(d-1\right)}{8\pi^{d}}\frac{\alpha^{\frac{d}{2}-1} \overline \alpha^{\frac{d}{2}-2}\slashed x\gamma^+}{\left(-\overline \alpha(x-\sigma n)^2 -\alpha x^2+\imag \epsilon \right)^{d-1}} q(x)
+	\\
+	&=
+	-(\imag g)^2C_F \int_{-\infty}^{z} \dx \sigma \int \dx ^d x \int_0^1 \dx \alpha \frac{\imag \Gamma\left(d-1\right)}{8\pi^{d}}\frac{\alpha^{\frac{d}{2}-1} \overline \alpha^{\frac{d}{2}-2}\slashed x\gamma^+}{\left(-x^2+\imag \epsilon\right)^{d-1}} q(x+\overline \alpha \sigma n )
+\end{align}
+
+here use the formula (copied from Alexeys notes)
+
+\begin{align}
+	\int \dx ^d x \frac{x^\mu x^\nu}{\left(-x^2+\imag \epsilon\right)^{d-1}}
+	&=
+	\frac{-\imag \pi^{\frac{d}{2}}}{2(2-\frac{d}{2})}\frac{\metric^{\mu\nu}}{\Gamma\left(d-1\right)}
+\end{align}
+
+own adaption for four elements in numerator:
+
+\begin{align}
+	\int \ddx  x \frac{x^\mu x^\nu x^\rho x^\sigma}{\left(-x^2+\imag \epsilon\right)^{d}}
+	&=
+	\frac{\imag \pi^{\frac{d}{2}}}{4(2-\frac{d}{2})\Gamma\left(d\right)}\left(\metric^{\mu\nu}\metric^{\rho \sigma} + \metric^{\mu \rho} \metric^{\nu \sigma} +\metric^{\mu \sigma}\metric^{\nu \rho}\right)	
+\end{align}
+expand quark field and have
+
+\begin{align}
+	A
+	&=
+	-(\imag g)^2C_F \int_{-\infty}^{z} \dx \sigma \int_0^1 \dx \alpha \frac{1}{8\pi^{\frac{d}{2}}}\frac{\alpha^{\frac{d}{2}-1} \overline \alpha^{\frac{d}{2}-2}\gamma^\nu\gamma^+}{2\left(2-\frac{d}{2}\right)} \partial_\nu q(\overline \alpha \sigma n )
+\end{align}
+\subsection{left quark }
+\begin{align}
+\twoqbar{1}(z) 
+&=
+\qbar(zn)\wil{zn}{-\infty n }
+\end{align}
+First order corr:Mid calculation shift : $x = x + \alpha \sigma n$
+\begin{align}
+	\overline A
+	&=
+	\left(\imag g \int \dx ^d x \qbar(x) \slashed \Aqu (x) q(x)\right)\qbar(zn)\wil{zn}{-\infty n }\left[\imag g \int_{-\infty}^ {z} \dx \sigma \Aqu^+(\sigma n)\right]
+	\\
+	&=
+	(\imag g)^2C_F \int_{-\infty}^ {z} \dx \sigma\int \dx ^d x \qbar(x) \gamma^+	\frac{\Gamma\left(\frac{d}{2}\right)}{2\pi^{\frac{d}{2}}}\frac{\imag \slashed x}{\left(-x^2+\imag \varepsilon\right)^{\frac{d}{2}}}\frac{-1}{4 \pi^{\frac{d}{2}}} \frac{\Gamma\left(\frac{d}{2}-1\right)}{\left(-(x-\sigma n)^2+\imag\epsilon\right)^{\frac{d}{2}-1}}
+	\\
+	&=
+	-\imag(\imag g)^2C_F \int_{-\infty}^ {z} \dx \sigma\int \dx ^d x \int_0^1 \dx \alpha \qbar(x) 	\frac{\Gamma\left(d-1\right)}{8\pi^{d}}\gamma^+\slashed x \frac{\alpha^{\frac{d}{2}-2}\overline\alpha^{\frac{d}{2}-1}}{\left(-\overline\alpha x^2-\alpha(x-\sigma n)^2+\imag\epsilon\right)^{d-1}}
+	\\
+	&=
+	-\imag(\imag g)^2C_F \int_{-\infty}^ {z} \dx \sigma\int \dx ^d x \int_0^1 \dx \alpha \qbar(x+\alpha\sigma n) 	\frac{\Gamma\left(d-1\right)}{8\pi^{d}}\gamma^+\slashed x \frac{\alpha^{\frac{d}{2}-2}\overline\alpha^{\frac{d}{2}-1}}{\left(-x^2+\imag\epsilon\right)^{d-1}}
+	\\
+	&=
+	-(\imag g)^2C_F \int_{-\infty}^ {z} \dx \sigma\int_0^1 \dx \alpha \partial_\mu\qbar(\alpha\sigma n) 	\frac{1}{8\pi^{\frac{d}{2}}}\gamma^+\gamma^\mu \frac{\alpha^{\frac{d}{2}-2}\overline\alpha^{\frac{d}{2}-1}}{2\left(2-\frac{d}{2}\right)}
+	\\
+	&=
+	\frac{\as}{4\pi} C_F \int_{-\infty}^ {z} \dx \sigma\int_0^1 \dx \alpha \frac{\alpha^{\frac{d}{2}-2}\overline\alpha^{\frac{d}{2}-1}}{\left(2-\frac{d}{2}\right)} \partial_\mu\qbar(\alpha\sigma n) 	\gamma^+\gamma^\mu
+	\\
+	&=
+	\frac{2\as}{4\pi} C_F \int_{-\infty}^ {z} \dx \sigma\int_0^1 \dx \alpha \frac{\overline\alpha}{\epsilon} \partial_+\qbar(\alpha\sigma n)
+\end{align}
+
+perform the last integral is not trivial for me:
+\begin{align}
+	f(x) 
+	&=
+	\int \dxfm{p}{d} \expo^{\imag \skp{p}{x}} \int \dxfs{x'}{d} \expo^{-\imag\skp{p}{x'}} f(x')
+	\\
+	\partial_+\qbar(x) 
+	&=
+	\int \dxfm{p}{d} \expo^{\imag \skp{p}{x}} \int \dxfs{x'}{d} \expo^{-\imag\skp{p}{x'}} \partial_+\qbar(x')
+	\\
+	&=
+	\int \dxfm{p}{d} \int \dxfs{x'}{d} \left(-\imag \pp\right)\expo^{\imag\skp{p}{x-x'}}\qbar(x')
+	\\
+	&=
+	\int \dxfm{p}{d} \left(-\imag \pp\right)\expo^{\imag\skp{p}{x}}\qbar(p)
+\end{align}
+then 
+\begin{align}
+	\int _0^1\dx \alpha \int _{-\infty}^{0} \dx \sigma \overline \alpha \partial_+ \qbar((\alpha\sigma+z)n)
+	&=
+	\int \dxfm{p}{d}\expo^{\imag \pp z}\qbar(p)\int _0^1\dx \alpha \int _{-\infty}^{0} \dx \sigma \overline \alpha \left(-\imag \pp\right)\expo^{\imag \alpha \sigma \pp}
+\end{align}
+to deal with oscillating integral : introduce regulator for the integral, $\delta$
+\begin{align}
+	&=
+	\int \dxfm{p}{d}\expo^{\imag \pp z}\qbar(p)\int _0^1\dx \alpha \int _{-\infty}^{0} \dx \sigma \overline \alpha\left(-\imag \pp\right) \expo^{\imag \alpha \sigma \pp}\expo^{\delta\sigma}
+	\\
+	&=
+	\int \dxfm{p}{d}\expo^{\imag \pp z}\qbar(p)\int _0^1\dx \alpha  \frac{\overline \alpha \left(-\imag \pp\right)}{\imag \alpha \pp + \delta}
+	\\
+	&=
+	\int \dxfm{p}{d}\expo^{\imag \pp z}\qbar(p)\int _0^1\dx \alpha  \frac{\alpha-1 }{\alpha + \frac{\delta}{\imag \pp}}
+	\\
+		&=
+	\int \dxfm{p}{d}\expo^{\imag \pp z}\qbar(p)\int _{\frac{\delta}{\imag \pp}}^{1+\frac{\delta}{\imag \pp}}\dx \alpha  \frac{\alpha-1 }{\alpha}
+	\\
+	&=
+	\int \dxfm{p}{d}\expo^{\imag \pp z}\qbar(p) \left(1-\ln\left(\frac{\imag \pp}{\delta}\right)\right)
+\end{align}
+CARE global minus difference to Alexeys result...  
