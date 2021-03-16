@@ -744,7 +744,7 @@ To check how the result changes, carefully compare the computation.
 \end{align}
 next step is identical; $zn-x$ becomes $zn+x$ in propagators. But other propagator does not change, only integration limits. Note the change of order of fields also implies other color structure. It will result in total minus sign, so i expect.
 \begin{align}
-g^2\int_{-zn}^{-\infty} \dx \sigma  \int \ddx x 
+-\imag g^2\int_{-zn}^{-\infty} \dx \sigma  \int \ddx x 
 \left( \partial_{z^\mu} \partial_{x^\alpha} \propagator_{\rho \beta}(zn+x) \propagator_{+ \gamma}(\sigma n -x)\delta^{A'E} \delta^{B'F} + \partial_{z^\mu}  \propagator_{\rho \gamma}(zn+x) \partial_{x^\alpha}\propagator_{+ \beta}(\sigma n -x) \delta^{A'F} \delta^{B'E} \right)A_{\nu}^{D}(x)v^{\nu \alpha\beta\gamma}_{DEF} T^{B'}_{CA'}
 \end{align}
 For the color computation we have the same structure, but a total minus sign due to the interchange in $T^{B'}_{A'C} \rightarrow T^{B'}_{CA'}$.
@@ -759,6 +759,8 @@ AND
 \\
 Result~in 
 \\
+x\rightarrow& x + \overline u \sigma n -zn
+\\
 x+zn \rightarrow & x + \overline u \sigma n
 \\
 x-\sigma n \rightarrow & x - u\sigma n
@@ -767,23 +769,306 @@ I go on and copy the expression \eref{randomstep1} Comment: the derivative on fi
 \begin{align}
 \partial_{z^\mu} \partial_{x^\alpha} \propagator_{\rho \beta}(zn+x) \propagator_{+ \gamma}(\sigma n -x)
 &=
-\left(-\frac{4 \left(\frac{d}{2}-1\right)\frac{d}{2}(zn+x)_\mu (zn+x)_\alpha}{\left(-(zn+x)^2 +\imag \epsilon\right)^{\frac{d}{2}+1}} {\color{red}-} \frac{2\left( \frac{d}{2}-1\right) \metric_{\mu \alpha} }{\left(-(zn+x)^2 +\imag \epsilon\right)^{\frac{d}{2}}}\right)\frac{1}{\left(-(\sigma n-x)^2 + \imag \epsilon\right)^{\frac{d}{2}-1}}
+\left({\color{red}+}\frac{4 \left(\frac{d}{2}-1\right)\frac{d}{2}(zn+x)_\mu (zn+x)_\alpha}{\left(-(zn+x)^2 +\imag \epsilon\right)^{\frac{d}{2}+1}} {\color{red}-} \frac{2\left( \frac{d}{2}-1\right) \metric_{\mu \alpha} }{\left(-(zn+x)^2 +\imag \epsilon\right)^{\frac{d}{2}}}\right)\frac{1}{\left(-(\sigma n-x)^2 + \imag \epsilon\right)^{\frac{d}{2}-1}}
 \\
 &=
 \int_{0}^{1} \dx u \frac{ u^{\frac{d}{2}-1} \overline u^{\frac{d}{2}-2} }{\Gamma^2\left( \frac{d}{2} -1 \right)}	\bigg(\frac{4 u \Gamma\left( d \right) x_\mu (\overline u\sigma n+x)_\alpha}{\left(-x^2 +\imag \epsilon\right)^{d}} 
 \nl
 {\color{blue}-} \frac{2\Gamma\left( d-1 \right) \metric_{\mu \alpha} }{\left(-x^2+\imag \epsilon\right)^{d-1}}\bigg)
+\label{randomstep3}
 \end{align} 
 this is obtained by thinking, but to be 100\% sure one should really check it fully explicitly. But im sure it is correct.
 Other term (copyied from \eref{randomstep2}): (and here for the derivative same comment as above!)
 \begin{align}
 \partial_{z^\mu}  \propagator_{\rho \gamma}(zn+x) \partial_{x^\alpha}\propagator_{+ \beta}(\sigma n -x)
 &=
-{\color{blue}-}4\int_{0}^{1} \dx u \frac{u^{\frac{d}{2}-1} \overline u^{\frac{d}{2}-1}\Gamma\left( d \right)}{\Gamma^2\left( \frac{d}{2}-1 \right)}\frac{x_\mu(x + \overline u\sigma n)_\alpha}{\left(-x^2 + \imag \epsilon\right)^{d}}
+{\color{red}+}4\int_{0}^{1} \dx u \frac{u^{\frac{d}{2}-1} \overline u^{\frac{d}{2}-1}\Gamma\left( d \right)}{\Gamma^2\left( \frac{d}{2}-1 \right)}\frac{x_\mu(x -  u\sigma n)_\alpha}{\left(-x^2 + \imag \epsilon\right)^{d}}
+\end{align}
+Then I should contract the metric for all the terms. 
+For double derivative on propagator i have
+\begin{align}
+	\metric_{\rho \beta} \metric_{\gamma + } v^{\nu \alpha\beta\gamma} &= 2(\metric^{\nu \rho } \metric^{\alpha + } - \metric^{\rho \alpha}\metric^{\nu +})
+\end{align}
+where the second term in \eref{randomstep3} drops since it implies multiplication with $\metric^{\alpha \mu}$ and thus gives zero.
+Other contraction is
+\begin{align}
+	\metric_{+ \beta} \metric_{\gamma \rho } v^{\nu \alpha\beta\gamma} &= -2(\metric^{\nu \rho } \metric^{\alpha + } - \metric^{\rho \alpha}\metric^{\nu +})
+\end{align}
+In other words it is the same calulation, obviously. Nothing else to expect.
+So, from color i have relative minus (and total minus ), from metric i have relative minus (relative here between first and second term)
+that is why nominator structure of added term is (no color factors and Gammas)
+\begin{align}
+{\color{red}+}8\int_{0}^{1} \dx u u^{\frac{d}{2}-1} \overline u^{\frac{d}{2}-2}\frac{x_\mu x_\alpha}{\left(-x^2 + \imag \epsilon\right)^{d}}(\metric^{\nu \rho } \metric^{\alpha + } - \metric^{\rho \alpha}\metric^{\nu +})
+\end{align}
+Field $A(x\rightarrow x + \overline u \sigma n -zn$) double expanded, then intetgration over $x$.
+\begin{align}
+	\int \ddx x\frac{x_\mu x_\alpha x_\tau x_\sigma}{\left(-x^2 + \imag \epsilon\right)^{d}}) \partial^\tau \partial^\sigma A(zn+\overline u n)
+	&=
+	\frac{\imag \pi^{\frac{d}{2}}}{4(2-\frac{d}{2})\Gamma(d)} (``sym. metric'')
+\end{align}
+contracting produced metric with existing and subtract interchanged term $(\rho \leftrightarrow \mu ~~\rho = +$) (i also treat $\sigma$ and $\tau$ as identical indices since they can be interchanged in the derivative.)
+\begin{align}
+	2(\metric_{\mu \tau}\metric_{\sigma+}\metric_{\nu + } - \metric_{\mu \nu } \metric_{\tau +}\metric_{\sigma+})
 \end{align}
 
+Combine all this:
+\begin{align}
+	&\frac{-16\imag^2 C_A \delta^{CD} g^2}{4^24\epsilon \pi^2}\int_{0}^{-\infty} \dx \sigma \int_0^1 \dx u u^{\frac{d}{2}-1} \overline u^{\frac{d}{2}-2} \left(\partial_\mu \partial_+ A^D_+ - \partial_+\partial_+ A^D_\mu\right)
+	\\
+	&=
+	\frac{4 \as C_A }{\epsilon}\int_{0}^{-\infty} \dx \sigma \int_0^1 \dx u u^{\frac{d}{2}-1} \overline u^{\frac{d}{2}-2} \left(\partial_\mu \partial_+ A^C_+ - \partial_+\partial_+ A^C_\mu\right)(-zn+\overline u \sigma n)
+\end{align}
+
+\begin{align}
+	&\int_{0}^{-\infty} \dx \sigma \int_0^1 \dx u u^{\frac{d}{2}-1} \overline u^{\frac{d}{2}-2} \left(\partial_\mu \partial_+ A^C_+ - \partial_+\partial_+ A^C_\mu\right)(-zn+\overline u \sigma n)
+	\\
+	&=
+	\int_{0}^{-\infty} \dx \sigma \int_0^1 \dx u u \partial_+ f(y+\overline u \sigma n)
+	\\
+	&=
+	\int \frac{\ddx p}{(2\pi)^4}\int_{0}^{-\infty} \dx \sigma \int_0^1 \dx u u (-\imag\pp) \expo^{\imag \skp{y+\overline u \sigma n}{p}+\delta \sigma} f(p)
+	\\
+	&=
+	-\int \frac{\ddx p}{(2\pi)^4} \int_0^1 \dx u u \frac{-\imag\pp}{\imag \overline u \pp + \delta} \expo^{\imag \skp{y}{p}} f(p)
+	\\
+	&=
+	\int \frac{\ddx p}{(2\pi)^4}\int_0^1 \dx \overline u \frac{1-\overline u}{ \overline u + \frac{\delta}{\imag\pp}} \expo^{\imag \skp{y}{p}} f(p)
+	\\
+	&=
+	\int \frac{\ddx p}{(2\pi)^4}\int_{\frac{\delta}{\imag\pp}}^{1+\frac{\delta}{\imag\pp}} \dx \overline u \frac{1-\overline u-0}{ \overline u } \expo^{\imag \skp{y}{p}} f(p)
+	\\
+	&=
+	\int \frac{\ddx p}{(2\pi)^4}\left(1+\ln\left(\frac{\imag\pp}{\delta}\right)\right) \expo^{\imag \skp{y}{p}} f(p)
+	\\
+	&=
+	\left(1+\ln\left(\frac{\imag\pp}{\delta}\right)\right) f(y)
+\end{align}
 COMBINED RESULT FOR GLUON TWIST1: 
 
+A better working method is maybe to parallel write serious exressions and then drop from them from time to time parts into ``prefactor'' expression
+
+Let me do parallel computing. 
+
+I take color red for right field, color blue for left field. Common factors i put out in front will be black, no color.
+Thus here we have the following diagrams.
+{\color{red}
+\begin{align}
+	&\contraction[3ex]{\bigg(-\imag g \int \ddx xA_\nu^D(x) \partial_{x^\alpha}}{B}{_\beta^{E} (x) B_\gamma^F(x) \bigg) v^{\nu \alpha\beta\gamma}_{DEF}\imag g \int_{-z}^{-\infty} \dx \sigma B_+^{B'}(\sigma n) T^{B'}_{CA'}\partial_\mu}{B}
+	\contraction[2ex]{\bigg(-\imag g \int \ddx xA_\nu^D(x) \partial_{x^\alpha} B_\beta^{E} (x) }{B}{_\gamma^F(x) \bigg) v^{\nu \alpha\beta\gamma}_{DEF}\imag g \int_{-z}^{-\infty} \dx \sigma }{B}
+	\bigg(-\imag g \int \ddx xA_\nu^D(x) \partial_{x^\alpha} B_\beta^{E} (x) B_\gamma^F(x) \bigg) v^{\nu \alpha\beta\gamma}_{DEF}\imag g \int_{-z}^{-\infty} \dx \sigma B_+^{B'}(\sigma n) T^{B'}_{CA'}\partial_\mu B^{A'}_\rho (-zn) 
+	\nl
+	+
+	\contraction[3ex]{\bigg(-\imag g \int \ddx xA_\nu^D(x) \partial_{x^\alpha}}{B}{_\beta^{E} (x) B_\gamma^F(x) \bigg) v^{\nu \alpha\beta\gamma}_{DEF}\imag g \int_{-z}^{-\infty} \dx \sigma}{B}
+	\contraction[2ex]{\bigg(-\imag g \int \ddx xA_\nu^D(x) \partial_{x^\alpha} B_\beta^{E} (x)}{B}{_\gamma^F(x) \bigg) v^{\nu \alpha\beta\gamma}_{DEF}\imag g \int_{-z}^{-\infty} \dx \sigma B_+^{B'}(\sigma n) T^{B'}_{CA'}\partial_\mu}{B}
+	\bigg(-\imag g \int \ddx xA_\nu^D(x) \partial_{x^\alpha} B_\beta^{E} (x) B_\gamma^F(x) \bigg) v^{\nu \alpha\beta\gamma}_{DEF}\imag g \int_{-z}^{-\infty} \dx \sigma B_+^{B'}(\sigma n) T^{B'}_{CA'}\partial_\mu B^{A'}_\rho (-zn)
+\end{align}
+}
+{\color{blue}
+\begin{align}
+&\contraction[2ex]{\partial_\mu}{B}{^{A'}_\rho(zn) \imag g \int _{-\infty}^{z} \dx \sigma B_+^{B'}(\sigma n) T^{B'}_{A'C}\bigg(-\imag g \int \ddx xA_\nu^D(x) \partial_{x^\alpha}}{B}
+\contraction[3ex]{\partial_\mu B^{A'}_\rho (zn) \imag g \int _{-\infty}^{z} \dx \sigma}{B}{_+^{B'}(\sigma n) T^{B'}_{A'C}\bigg(-\imag g \int \ddx xA_\nu^D(x) \partial_{x^\alpha} B_\beta^{E} (x) }{B}
+\partial_\mu B^{A'}_\rho (zn) \imag g \int _{-\infty}^{z} \dx \sigma B_+^{B'}(\sigma n) T^{B'}_{A'C}\bigg(-\imag g \int \ddx xA_\nu^D(x) \partial_{x^\alpha} B_\beta^{E} (x) B_\gamma^F(x) \bigg) v^{\nu \alpha\beta\gamma}_{DEF}
+\nl
++\contraction[3ex]{\partial_\mu}{B}{^{A'}_\rho (zn) \imag g \int _{-\infty}^{z} \dx \sigma B_+^{B'}(\sigma n) T^{B'}_{A'C}\bigg(-\imag g \int \ddx xA_\nu^D(x) \partial_{x^\alpha} B_\beta^{E} (x) }{B}
+\contraction[2ex]{\partial_\mu B^{A'}_\rho (zn) \imag g \int _{-\infty}^{z} \dx \sigma}{B}{_+^{B'}(\sigma n) T^{B'}_{A'C}\bigg(-\imag g \int \ddx xA_\nu^D(x) \partial_{x^\alpha} }{B}
+\partial_\mu B^{A'}_\rho (zn) \imag g \int _{-\infty}^{z} \dx \sigma B_+^{B'}(\sigma n) T^{B'}_{A'C}\bigg(-\imag g \int \ddx xA_\nu^D(x) \partial_{x^\alpha} B_\beta^{E} (x) B_\gamma^F(x) \bigg) v^{\nu \alpha\beta\gamma}_{DEF}
+\end{align}
+}
+For the colors:
+{\color{blue}
+\begin{align}
+f^{DEF} T^{B'}_{A'C}(\delta^{A'E} \delta^{B'F} + \delta^{A'F} \delta^{B'E})
+&=
+-\imag(f^{DEF}f^{B'A'C}\delta^{A'E} \delta^{B'F} + f^{DEF}f^{B'A'C}\delta^{A'F} \delta^{B'E})
+\\
+&=
+-\imag(-f^{DEF}f^{CEF} + f^{DEF}f^{CEF})
+\\
+&=
+\imag C_A\delta^{CD}(+1 -1)
+\end{align}
+}
+$+1-1$ means, the first line has $+$, the second line has $-1$.
+ {\color{red}
+\begin{align}
+f^{DEF} T^{B'}_{CA'}(\delta^{A'E} \delta^{B'F} + \delta^{A'F} \delta^{B'E})
+&=
+-\imag(f^{DEF}f^{B'CA'}\delta^{A'E} \delta^{B'F} + f^{DEF}f^{B'CA'}\delta^{A'F} \delta^{B'E})
+\\
+&=
+-\imag(f^{DEF}f^{FCE} + f^{DEF}f^{ECF})
+\\
+&=
+-\imag f^{DEF}f^{FCE}(+1-1)
+\\
+&=
+-\imag C_A\delta^{CD}(+1 -1)
+\\
+&=
+-{\color{blue} \imag C_A\delta^{CD}(+1 -1)}
+\end{align}
+}
+so from color the two diagrams differ by a total sign
+First common factors:
+\begin{align}
+	+\imag^3 C_A g^2 \int \ddx  v^{\nu \alpha\beta\gamma}\delta^{CD}
+\end{align}
+
+
+\begin{align}
+	&{\color{blue}\int_{-\infty}^{z}\partial_{zn^\mu} \partial_{x^\alpha} \propagator(zn-x)_{\rho \beta} \propagator(x-\sigma n)_{\gamma +} - \partial_{zn^\mu}\propagator(zn-x)_{\rho \gamma}\partial_{x^\alpha}  \propagator(x-\sigma n)_{\beta +}}
+	\\
+	&-{\color{red}\int_{-z}^{-\infty}\partial_{zn^\mu} \partial_{x^\alpha} \propagator(zn+x)_{\rho \beta} \propagator(x-\sigma n)_{\gamma +} - \partial_{zn^\mu}\propagator(zn+x)_{\rho \gamma}\partial_{x^\alpha}  \propagator(x-\sigma n)_{\beta +}}
+\end{align}
+Then we have the to compute as usual, derivatives on propagators. Since i know that the metric computation will kill the additional term from double derivative on one propagator (additional term $\tilde \metric_{\mu \alpha}$ I IGNORE IT HERE.)
+\begin{align}
+	&+\imag^3 C_A g^2 \int \ddx \delta^{CD}\Gamma^2\left(\frac{d}{2}-1\right)\frac{1}{4^2\pi^d}
+\end{align}
+{\color{blue}
+\begin{align}
+	&\int_{-\infty}^{z}\dx \sigma v^{\nu \alpha\beta\gamma}
+	\nl
+	\frac{4(\frac{d}{2}-1)\frac{d}{2}(zn-x)_\mu(x-zn)_\alpha}{\left(-(x-zn)^2 + \imag \epsilon\right)^{\frac{d}{2}+1}} 
+	\frac{1}{\left(-(x-\sigma n)^2 + \imag \epsilon\right)^{\frac{d}{2}-1}}\metric_{\rho \beta} \metric_{\gamma +} 
+	\nl
+	- \frac{-2(\frac{d}{2}-1)(zn-x)_\mu}{\left( -(x-z n)^2 + \imag \epsilon \right)^{\frac{d}{2}}}\frac{-2(\frac{d}{2}-1)(x-\sigma n)_\alpha}{\left(-(x-\sigma n)^2 + \imag \epsilon\right)^{\frac{d}{2}}}
+	\metric_{\rho \gamma}\metric_{\beta +}
+\end{align}
+}
+
+{\color{red}
+\begin{align}
+	&-\int_{-z}^{-\infty}\dx \sigma v^{\nu \alpha\beta\gamma}
+	\nl
+	\frac{4(\frac{d}{2}-1)\frac{d}{2}(-zn-x)_\mu(x+zn)_\alpha}{\left(-(x+zn)^2 + \imag \epsilon\right)^{\frac{d}{2}+1}} 
+	\frac{1}{\left(-(x-\sigma n)^2 + \imag \epsilon\right)^{\frac{d}{2}-1}}\metric_{\rho \beta} \metric_{\gamma +} 
+	\nl
+	- \frac{-2(\frac{d}{2}-1)(-zn-x)_\mu}{\left( -(x+z n)^2 + \imag \epsilon \right)^{\frac{d}{2}}}\frac{-2(\frac{d}{2}-1)(x-\sigma n)_\alpha}{\left(-(x-\sigma n)^2 + \imag \epsilon\right)^{\frac{d}{2}}}
+	\metric_{\rho \gamma}\metric_{\beta +}
+\end{align}
+}
+shifts:
+{\color{blue}
+\begin{align}
+	x\rightarrow &x+ uzn + \overline u  \sigma n\\
+	\sigma \rightarrow& \sigma +z
+	\\
+	HENCE\\
+	x\rightarrow & x+ zn + \overline u \sigma n
+	\\
+	x-zn \rightarrow &  x + \overline u \sigma n
+	\\
+	x-\sigma n \rightarrow & x  - u \sigma n
+\end{align}
+}
+{\color{red}
+\begin{align}
+	x\rightarrow &x- uzn + \overline u  \sigma n\\
+	\sigma \rightarrow& \sigma -z
+	\\
+	HENCE\\
+	x\rightarrow & x- zn + \overline u \sigma n
+	\\
+	x+zn \rightarrow &  x + \overline u \sigma n
+	\\
+	x-\sigma n \rightarrow & x - u \sigma n
+\end{align}
+}
+Lorentz index computation is the same for both, red and blue. it is
+\begin{align}
+v^{\nu\alpha\beta\gamma} 
+&=
+2\metric^{\nu \beta}\metric^{\alpha\gamma}-\metric^{\nu \alpha}\metric^{\beta \gamma} -2\metric^{\nu \gamma} \metric^{\alpha\beta}
+\\
+v^{\nu\alpha\beta\gamma}\metric_{\mu\alpha}\metric_{\rho\beta}\metric_{+\gamma}
+&=
+0\text{(that is why there is no additional term from the double derivative on prop.)}
+\\
+v^{\nu\alpha\beta\gamma}\metric_{\rho\beta}\metric_{+\gamma}
+&=
+2(\metric^{\nu \rho} \metric^{\alpha+} - \metric^{\nu +}\metric^{\alpha\rho})
+\\
+v^{\nu\alpha\beta\gamma}\metric_{\rho\gamma}\metric_{+\beta}
+&=
+-2(\metric^{\nu \rho} \metric^{\alpha+} - \metric^{\nu +}\metric^{\alpha\rho})
+\end{align}
+
+and results in relative minus sign between the respective lines plus a common factor:
+\begin{align}
+	&+\imag^3 C_A g^2 \int \ddx \delta^{CD}\Gamma^2\left(\frac{d}{2}-1\right)\frac{1}{4^2\pi^d}2(\metric^{\nu \rho} \metric^{\alpha+} - \metric^{\nu +}\metric^{\alpha\rho})
+\end{align}
+The minus sign from this computation annihilates the relative minus from color (the minus between the diagrams! this has nothing to do with the minus between red and blue!)
+{\color{blue}
+\begin{align}
+	&\int_{-\infty}^{0}\int_0^1 \dx \frac{\Gamma(d)}{\Gamma^2\left(\frac{d}{2}-1\right)} u^{\frac{d}{2}-1}\overline u ^{\frac{d}{2}-2}(-4x_\mu)\frac{u(x+\overline u \sigma n)_\alpha + \overline u(x- u\sigma n)_\alpha}{(-x^2+\imag \epsilon)^{d}}
+	\\
+	&=
+	-4\int_{-\infty}^{0}\int_0^1 \dx \frac{\Gamma(d)}{\Gamma^2\left(\frac{d}{2}-1\right)} u^{\frac{d}{2}-1}\overline u ^{\frac{d}{2}-2}\frac{x_\mu x_\alpha}{(-x^2+\imag \epsilon)^{d}}
+\end{align}
+}
+
+{\color{red}
+\begin{align}
+	&-\int_{0}^{-\infty}\int_0^1 \dx \frac{\Gamma(d)}{\Gamma^2\left(\frac{d}{2}-1\right)} u^{\frac{d}{2}-1}\overline u ^{\frac{d}{2}-2}(-4x_\mu)\frac{u(x+\overline u \sigma n)_\alpha + \overline u(x- u\sigma n)_\alpha}{(-x^2+\imag \epsilon)^{d}}
+	\\
+	&=
+	+4\int_{0}^{-\infty}\int_0^1 \dx  \frac{\Gamma(d)}{\Gamma^2\left(\frac{d}{2}-1\right)} u^{\frac{d}{2}-1}\overline u ^{\frac{d}{2}-2}\frac{x_\mu x_\alpha}{(-x^2+\imag \epsilon)^{d}}
+	\\
+	&=
+	-4\int_{-\infty}^{0}\int_0^1 \dx \frac{\Gamma(d)}{\Gamma^2\left(\frac{d}{2}-1\right)} u^{\frac{d}{2}-1}\overline u ^{\frac{d}{2}-2}\frac{x_\mu x_\alpha}{(-x^2+\imag \epsilon)^{d}}
+\end{align}
+}
+at this point it looks like both computations are identical, but there is still the free field $A_\nu(x)$, which after shift is
+\begin{align}
+	{\color{blue}A(x+zn+\overline u \sigma n)} \spacee {\color{red}A(x-zn+\overline u \sigma n)}
+\end{align}
+This has to be kept in mind. 
+Further the integration can be done in for both terms identically. I write $A(x+yn+\overline u \sigma n)$, and $y=\pm z$, blue or red case. It follows the following computation:
+\begin{align}
+	&+\imag^3 C_A g^2 \delta^{CD}\Gamma^2\left(\frac{d}{2}-1\right)\frac{1}{4^2\pi^d}2(\metric^{\nu \rho} \metric^{\alpha+} - \metric^{\nu +}\metric^{\alpha\rho})(-4)\int_{-\infty}^{0}\int_0^1 \dx \frac{\Gamma(d)}{\Gamma^2\left(\frac{d}{2}-1\right)} u^{\frac{d}{2}-1}\overline u ^{\frac{d}{2}-2}
+\end{align}
+\begin{align}
+	 \int \ddx \frac{x_\mu x_\alpha x_\tau x_\sigma}{(-x^2+\imag \epsilon)^{d}}\partial^\tau \partial^\sigma A(yn+\overline u \sigma n) &= 
+	\frac{\imag \pi^{\frac{d}{2}}}{4(2-\frac{d}{2})\Gamma(d)}\left(  \metric_{\mu \alpha} \metric_{\tau \sigma}+ \metric_{\mu \tau} \metric_{\alpha\sigma} + \metric_{\mu \sigma} \metric_{\alpha \tau} \right) A_\nu(yn+\overline u \sigma n)
+\end{align}
+Together metric  and fields give
+\begin{align}
+	&\left(  \metric_{\mu \alpha} \metric_{\tau \sigma}+ \metric_{\mu \tau} \metric_{\alpha\sigma} + \metric_{\mu \sigma} \metric_{\alpha \tau} \right) A_\nu(yn+\overline u \sigma n){\color{purple}- (\mu \leftrightarrow \rho)  [\rho = +]}
+	\\
+	&=2 \partial_+ \left( \partial_\mu A_+ - \partial_+ A_\mu \right)(yn+\overline u \sigma n)
+\end{align}
+
+Together with prefactors and so on
+
+\begin{align}
+	\frac{ (-4)2^2\imag^4 C_A g^2 }{4^3\pi^{\frac{d}{2}}\epsilon} \int_{-\infty}^{0}\dx \sigma\int_0^1 \dx u u^{\frac{d}{2}-1}\overline u ^{\frac{d}{2}-2} \partial_+\left( \partial_\mu A^C_+ - \partial_+ A^C_\mu \right)(yn+\overline u \sigma n)
+\end{align}
+
+now integration: 
+\begin{align}
+	&
+	\int_{0}^{-\infty} \dx \sigma \int_0^1 \dx u u \partial_+ f(yn+\overline u \sigma n)
+	\\
+	&=
+	\int \frac{\ddx p}{(2\pi)^4}\int_{0}^{-\infty} \dx \sigma \int_0^1 \dx u u (-\imag\pp) \expo^{\imag \skp{y+\overline u \sigma n}{p}+\delta \sigma} f(p)
+	\\
+	&=
+	-\int \frac{\ddx p}{(2\pi)^4} \int_0^1 \dx u u \frac{-\imag\pp}{\imag \overline u \pp + \delta} \expo^{\imag \skp{y}{p}} f(p)
+	\\
+	&=
+	\int \frac{\ddx p}{(2\pi)^4}\int_0^1 \dx \overline u \frac{1-\overline u}{ \overline u + \frac{\delta}{\imag\pp}} \expo^{\imag \skp{y}{p}} f(p)
+	\\
+	&=
+	\int \frac{\ddx p}{(2\pi)^4}\int_{\frac{\delta}{\imag\pp}}^{1+\frac{\delta}{\imag\pp}} \dx \overline u \frac{1-\overline u-0}{ \overline u } \expo^{\imag \skp{y}{p}} f(p)
+	\\
+	&=
+	\int \frac{\ddx p}{(2\pi)^4}\left(-1+\ln\left(\frac{\imag\pp}{\delta}\right)\right) \expo^{\imag \skp{y}{p}} f(p)
+	\\
+	&=
+	\left(-1+\ln\left(\frac{\imag\pp}{\delta}\right)\right) f(y)
+\end{align}
+note that i have in my previous computation a different integration order, this minus sign. 
+There is some problem with the last step, integrating over the momentum / the Fourier transformation.
 \ifdefined\mainprogram{}
 \else
 \include{end}
