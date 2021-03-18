@@ -2,15 +2,67 @@
 \else
 \include{head}
 \fi
+\section{Diagrams.}
+\feynmandiagram[vertical=a to b] {i1 -- [fermion] a -- [fermion] i2,a -- [photon] b,f1 -- [fermion] b -- [fermion] f2,};
 
+\feynmandiagram[horizontal=field to infinity] {field -- [scalar] wilson -- [scalar] infinity,field -- [photon] 3gluonvertex, wilson -- [photon] 3gluonvertex, };
 
+\begin{tikzpicture}\begin{feynman}
+\vertex(a1){\(\overline b\)};\vertex[right=1.5cm of a1] (a2);\vertex[right=1cm of a2] (a3);\vertex[right=1.5cm of a3] (a4){\(\overline u\)};\vertex[below=2em of a1] (b1){\(d\)};\vertex[below=2em of a4] (b2){\(d\)};
+%% See section 13.5 of PGF/TikZ manual
+\vertex at ($(a2)!0.5!(a3)!0.5cm!90:(a3)$) (d);
+%% Equivalent way to obtain (d):
+%\vertex at ($(b2)!0.5!(b3) + (0, -0.5cm)$) (d);
+\vertex[above=of a4] (c1){\(u\)};\vertex[above=2em of c1] (c3){\(\overline d\)};\vertex at ($(c1)!0.5!(c3)- (1cm, 0)$) (c2);\diagram* {(a4)-- [fermion] (a3)-- [fermion] (a2)-- [fermion] (a1),(b1)-- [fermion] (b2),(c3)-- [fermion,out=180,in=45] (c2)-- [fermion,out=-45,in=180] (c1),(a2)-- [boson,quarter left] (d)-- [boson,quarter left] (a3),(d) -- [boson, bend left,edge label=\(W^{+}\)] (c2),};\draw[decoration={brace}, decorate] (b1.south west)-- (a1.north west)node[pos=0.5, left] {  \(B^{0}\)};\draw[decoration={brace}, decorate] (c3.north east)-- (c1.south east)node[pos=0.5, right] {  \(\pi^{+}\)};\draw[decoration={brace}, decorate] (a4.north east)-- (b2.south east)node[pos=0.5, right] {  \(\pi^{-}\)};
+\end{feynman}
+\end{tikzpicture}
 
+\def \thelable {A}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=1.0cm of field](wilsoncoupling);
+\vertex[right=2.0cm of wilsoncoupling](infinity);
+\vertex[below=1cm of field](3gluon);
+\vertex[below=1cm of 3gluon](outgoingfield);
+\diagram* {(field) -- [scalar] (wilsoncoupling) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson] (3gluon) -- [boson] (wilsoncoupling)};
+\diagram* {(3gluon) -- [boson] (outgoingfield)};
+\vertex[right=2.0cm of field](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\def \thelable {B}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=1.0cm of field](wilsoncoupling);
+\vertex[right=2.0cm of wilsoncoupling](infinity);
+\vertex[below=1cm of field](3gluon);
+\vertex[below=1cm of 3gluon](outgoingfield);
+\diagram* {(field) -- [scalar] (wilsoncoupling) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson,half left] (3gluon) -- [boson,half left] (field)};
+\diagram* {(3gluon) -- [boson] (outgoingfield)};
+\vertex[right=2.0cm of field](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
 
-
-
-
-
-
+\def \thelable {C}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=1.0cm of field](wilsoncoupling);
+\vertex[right=2.0cm of wilsoncoupling](infinity);
+\vertex[below=1cm of field](3gluon);
+\vertex[below=1cm of 3gluon](outgoingfield);
+\diagram* {(field) -- [scalar] (wilsoncoupling) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson,half left] (wilsoncoupling)};
+\diagram* {(field) -- [boson] (outgoingfield)};
+\vertex[right=2.0cm of field](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
 
 
 
