@@ -1,0 +1,307 @@
+\ifdefined\mainprogram{}
+\else
+\include{head}
+\fi
+
+\def \thelable {A}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=2.0cm of field](wilsontwist1);
+\vertex[right=1.0cm of field](wilsoncoupling);
+\vertex[right=3.5cm of wilsontwist1](infinity);
+\vertex[below=1cm of field](3gluon);
+\vertex[below=1cm of 3gluon](outgoingfield);
+\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
+\diagram* {(field) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson] (3gluon) -- [boson, quarter right] (wilsoncoupling)};
+\diagram* {(3gluon) -- [boson] (outgoingfield)};
+\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
+\vertex[left=0.5cm of infinity](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\vspace{1cm}\hspace{0.5cm}
+\def \thelable {A'}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=2.0cm of field](wilsontwist1);
+\vertex[right=3.5cm of wilsontwist1](infinity);
+\vertex[right=2.0cm of wilsontwist1](wilsoncoupling);
+\vertex[below=1cm of field](3gluon);
+\vertex[below=1cm of 3gluon](outgoingfield);
+\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
+\diagram* {(field) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson] (3gluon) -- [boson, quarter right] (wilsoncoupling)};
+\diagram* {(3gluon) -- [boson] (outgoingfield)};
+\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
+\vertex[left=0.5cm of infinity](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\vspace{1cm}\hspace{0.5cm}
+\def \thelable {B}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=2.0cm of field](wilsontwist1);
+\vertex[right=3.5cm of wilsontwist1](infinity);
+\vertex[right=1.0cm of field](wilsoncoupling);
+\vertex[below=1cm of wilsontwist1](3gluon);
+\vertex[below=2cm of field](outgoingfield);
+\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
+\diagram* {(field) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson] (outgoingfield)};
+\diagram* {(wilsontwist1) -- [boson] (3gluon) -- [boson] (outgoingwilsontwist1)};
+\diagram* {(wilsoncoupling) -- [boson, quarter right] (3gluon)};
+\vertex[left=0.5cm of infinity](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\vspace{1cm}
+\def \thelable {B'}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=2.0cm of field](wilsontwist1);
+\vertex[right=3.5cm of wilsontwist1](infinity);
+\vertex[right=1.0cm of wilsontwist1](wilsoncoupling);
+\vertex[below=1cm of wilsontwist1](3gluon);
+\vertex[below=2cm of field](outgoingfield);
+\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
+\diagram* {(field) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson] (outgoingfield)};
+\diagram* {(wilsontwist1) -- [boson] (3gluon) -- [boson] (outgoingwilsontwist1)};
+\diagram* {(wilsoncoupling) -- [boson, quarter left] (3gluon)};
+\vertex[left=0.5cm of infinity](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\vspace{1cm}\hspace{0.5cm}
+\def \thelable {C}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=2.0cm of field](wilsontwist1);
+\vertex[right=3.5cm of wilsontwist1](infinity);
+\vertex[below=1cm of field](3gluon);
+\vertex[below=1cm of wilsontwist1](3gluon2);
+\vertex[below=2cm of field](outgoingfield);
+\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
+\diagram* {(field) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson] (3gluon) -- [boson] (3gluon2) -- [boson] (wilsontwist1)};
+\diagram* {(3gluon) -- [boson] (outgoingfield)};
+\diagram* {(3gluon2) -- [boson] (outgoingwilsontwist1)};
+\vertex[left=0.5cm of infinity](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\vspace{1cm}\hspace{0.5cm}
+\def \thelable {D}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=2.0cm of field](wilsontwist1);
+\vertex[right=3.5cm of wilsontwist1](infinity);
+\vertex[right=1.0cm of wilsontwist1](wilsoncoupling);
+\vertex[right=1.0cm of field](aux4gluon);
+\vertex[below=1cm of aux4gluon](4gluon);
+\vertex[below=2cm of field](outgoingfield);
+\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
+\diagram* {(field) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson] (4gluon) -- [boson] (wilsontwist1)};
+\diagram* {(4gluon) -- [boson] (outgoingfield)};
+\diagram* {(4gluon) -- [boson] (outgoingwilsontwist1)};
+\vertex[left=0.5cm of infinity](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\vspace{1cm}
+\def \thelable {A1}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=2.0cm of field](wilsontwist1);
+\vertex[right=3.5cm of wilsontwist1](infinity);
+\vertex[right=1.0cm of field](wilsoncoupling);
+\vertex[below=2cm of field](outgoingfield);
+\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
+\diagram* {(field) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson] (outgoingfield)};
+\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
+\diagram* {(wilsoncoupling) -- [boson, quarter left] (field)};
+\vertex[left=0.5cm of infinity](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\vspace{1cm}\hspace{0.5cm}
+\def \thelable {A1'}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=2.0cm of field](wilsontwist1);
+\vertex[right=3.5cm of wilsontwist1](infinity);
+\vertex[right=1.0cm of wilsontwist1](wilsoncoupling);
+\vertex[below=2cm of field](outgoingfield);
+\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
+\diagram* {(field) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson] (outgoingfield)};
+\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
+\diagram* {(wilsoncoupling) -- [boson, quarter left] (field)};
+\vertex[left=0.5cm of infinity](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\vspace{1cm}\hspace{0.5cm}
+\def \thelable {B1}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=2.0cm of field](wilsontwist1);
+\vertex[right=3.5cm of wilsontwist1](infinity);
+\vertex[right=1.0cm of field](wilsoncoupling);
+\vertex[below=2cm of field](outgoingfield);
+\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
+\diagram* {(field) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson] (outgoingfield)};
+\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
+\diagram* {(wilsoncoupling) -- [boson, quarter right] (wilsontwist1)};
+\vertex[left=0.5cm of infinity](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\vspace{1cm}
+\def \thelable {B1'}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=2.0cm of field](wilsontwist1);
+\vertex[right=3.5cm of wilsontwist1](infinity);
+\vertex[right=1.0cm of wilsontwist1](wilsoncoupling);
+\vertex[below=2cm of field](outgoingfield);
+\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
+\diagram* {(field) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson] (outgoingfield)};
+\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
+\diagram* {(wilsoncoupling) -- [boson, quarter left] (wilsontwist1)};
+\vertex[left=0.5cm of infinity](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\vspace{1cm}\hspace{0.5cm}
+\def \thelable {AB}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=2.0cm of field](wilsontwist1);
+\vertex[right=3.5cm of wilsontwist1](infinity);
+\vertex[below=2cm of field](outgoingfield);
+\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
+\diagram* {(field) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson] (outgoingfield)};
+\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
+\diagram* {(wilsontwist1) -- [boson, quarter left] (field)};
+\vertex[left=0.5cm of infinity](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\vspace{1cm}\hspace{0.5cm}
+\def \thelable {A2}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=2.0cm of field](wilsontwist1);
+\vertex[right=3.5cm of wilsontwist1](infinity);
+\vertex[below=2cm of field](outgoingfield);
+\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
+\vertex[below=1cm of field](3gluon);
+\diagram* {(field) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson] (3gluon) -- [boson, half right] (field)};
+\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
+\diagram* {(3gluon) -- [boson] (outgoingfield)};
+\vertex[left=0.5cm of infinity](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\vspace{1cm}
+\def \thelable {B2}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=2.0cm of field](wilsontwist1);
+\vertex[right=3.5cm of wilsontwist1](infinity);
+\vertex[below=2cm of field](outgoingfield);
+\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
+\vertex[below=1cm of wilsontwist1](3gluon);
+\diagram* {(field) -- [scalar] (infinity)};
+\diagram* {(wilsontwist1) -- [boson] (3gluon) -- [boson, half right] (wilsontwist1)};
+\diagram* {(field) -- [boson] (outgoingfield)};
+\diagram* {(3gluon) -- [boson] (outgoingwilsontwist1)};
+\vertex[left=0.5cm of infinity](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\vspace{1cm}
+\def \thelable {E1}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=2.0cm of field](wilsontwist1);
+\vertex[right=3.5cm of wilsontwist1](infinity);
+\vertex[below=2cm of field](outgoingfield);
+\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
+\vertex[right=0.5cm of field](wilsoncoupling1);
+\vertex[right=1.5cm of field](wilsoncoupling2);
+\diagram* {(field) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson] (outgoingfield)};
+\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
+\diagram* {(wilsoncoupling1) -- [boson, half right] (wilsoncoupling2)};
+\vertex[left=0.5cm of infinity](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\vspace{1cm}
+\def \thelable {E2}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=2.0cm of field](wilsontwist1);
+\vertex[right=3.5cm of wilsontwist1](infinity);
+\vertex[below=2cm of field](outgoingfield);
+\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
+\vertex[right=1cm of field](wilsoncoupling1);
+\vertex[right=1cm of wilsontwist1](wilsoncoupling2);
+\diagram* {(field) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson] (outgoingfield)};
+\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
+\diagram* {(wilsoncoupling1) -- [boson, half right] (wilsoncoupling2)};
+\vertex[left=0.5cm of infinity](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\vspace{1cm}
+\def \thelable {E3}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex(field);
+\vertex[right=2.0cm of field](wilsontwist1);
+\vertex[right=3.5cm of wilsontwist1](infinity);
+\vertex[below=2cm of field](outgoingfield);
+\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
+\vertex[right=0.5cm of wilsontwist1](wilsoncoupling1);
+\vertex[right=1.5cm of wilsontwist1](wilsoncoupling2);
+\diagram* {(field) -- [scalar] (infinity)};
+\diagram* {(field) -- [boson] (outgoingfield)};
+\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
+\diagram* {(wilsoncoupling1) -- [boson, half right] (wilsoncoupling2)};
+\vertex[left=0.5cm of infinity](auxpoint);
+\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
+\end{feynman}
+\end{tikzpicture}
+\\
+
+\ifdefined\mainprogram{}
+\else
+\include{end}
+\fi

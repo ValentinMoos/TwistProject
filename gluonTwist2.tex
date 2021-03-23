@@ -5,245 +5,185 @@
 
 1-loop diagrams for gluon pdf: twist2:
 
-\def \thelable {A}
-\begin{tikzpicture}
-\begin{feynman}
-\vertex(field);
-\vertex[right=2.0cm of field](wilsontwist1);
-\vertex[right=1.0cm of field](wilsoncoupling);
-\vertex[right=3.5cm of wilsontwist1](infinity);
-\vertex[below=1cm of field](3gluon);
-\vertex[below=1cm of 3gluon](outgoingfield);
-\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
-\diagram* {(field) -- [scalar] (infinity)};
-\diagram* {(field) -- [boson] (3gluon) -- [boson, quarter right] (wilsoncoupling)};
-\diagram* {(3gluon) -- [boson] (outgoingfield)};
-\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
-\vertex[left=0.5cm of infinity](auxpoint);
-\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
-\end{feynman}
-\end{tikzpicture}
-\vspace{1cm}\hspace{0.5cm}
-\def \thelable {A'}
-\begin{tikzpicture}
-\begin{feynman}
-\vertex(field);
-\vertex[right=2.0cm of field](wilsontwist1);
-\vertex[right=3.5cm of wilsontwist1](infinity);
-\vertex[right=2.0cm of wilsontwist1](wilsoncoupling);
-\vertex[below=1cm of field](3gluon);
-\vertex[below=1cm of 3gluon](outgoingfield);
-\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
-\diagram* {(field) -- [scalar] (infinity)};
-\diagram* {(field) -- [boson] (3gluon) -- [boson, quarter right] (wilsoncoupling)};
-\diagram* {(3gluon) -- [boson] (outgoingfield)};
-\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
-\vertex[left=0.5cm of infinity](auxpoint);
-\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
-\end{feynman}
-\end{tikzpicture}
-\vspace{1cm}\hspace{0.5cm}
-\def \thelable {B}
-\begin{tikzpicture}
-\begin{feynman}
-\vertex(field);
-\vertex[right=2.0cm of field](wilsontwist1);
-\vertex[right=3.5cm of wilsontwist1](infinity);
-\vertex[right=1.0cm of field](wilsoncoupling);
-\vertex[below=1cm of wilsontwist1](3gluon);
-\vertex[below=2cm of field](outgoingfield);
-\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
-\diagram* {(field) -- [scalar] (infinity)};
-\diagram* {(field) -- [boson] (outgoingfield)};
-\diagram* {(wilsontwist1) -- [boson] (3gluon) -- [boson] (outgoingwilsontwist1)};
-\diagram* {(wilsoncoupling) -- [boson, quarter right] (3gluon)};
-\vertex[left=0.5cm of infinity](auxpoint);
-\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
-\end{feynman}
-\end{tikzpicture}
-\vspace{1cm}
-\def \thelable {B'}
-\begin{tikzpicture}
-\begin{feynman}
-\vertex(field);
-\vertex[right=2.0cm of field](wilsontwist1);
-\vertex[right=3.5cm of wilsontwist1](infinity);
-\vertex[right=1.0cm of wilsontwist1](wilsoncoupling);
-\vertex[below=1cm of wilsontwist1](3gluon);
-\vertex[below=2cm of field](outgoingfield);
-\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
-\diagram* {(field) -- [scalar] (infinity)};
-\diagram* {(field) -- [boson] (outgoingfield)};
-\diagram* {(wilsontwist1) -- [boson] (3gluon) -- [boson] (outgoingwilsontwist1)};
-\diagram* {(wilsoncoupling) -- [boson, quarter left] (3gluon)};
-\vertex[left=0.5cm of infinity](auxpoint);
-\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
-\end{feynman}
-\end{tikzpicture}
-\vspace{1cm}\hspace{0.5cm}
-\def \thelable {C}
-\begin{tikzpicture}
-\begin{feynman}
-\vertex(field);
-\vertex[right=2.0cm of field](wilsontwist1);
-\vertex[right=3.5cm of wilsontwist1](infinity);
-\vertex[below=1cm of field](3gluon);
-\vertex[below=1cm of wilsontwist1](3gluon2);
-\vertex[below=2cm of field](outgoingfield);
-\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
-\diagram* {(field) -- [scalar] (infinity)};
-\diagram* {(field) -- [boson] (3gluon) -- [boson] (3gluon2) -- [boson] (wilsontwist1)};
-\diagram* {(3gluon) -- [boson] (outgoingfield)};
-\diagram* {(3gluon2) -- [boson] (outgoingwilsontwist1)};
-\vertex[left=0.5cm of infinity](auxpoint);
-\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
-\end{feynman}
-\end{tikzpicture}
-\vspace{1cm}\hspace{0.5cm}
-\def \thelable {D}
-\begin{tikzpicture}
-\begin{feynman}
-\vertex(field);
-\vertex[right=2.0cm of field](wilsontwist1);
-\vertex[right=3.5cm of wilsontwist1](infinity);
-\vertex[right=1.0cm of wilsontwist1](wilsoncoupling);
-\vertex[right=1.0cm of field](aux4gluon);
-\vertex[below=1cm of aux4gluon](4gluon);
-\vertex[below=2cm of field](outgoingfield);
-\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
-\diagram* {(field) -- [scalar] (infinity)};
-\diagram* {(field) -- [boson] (4gluon) -- [boson] (wilsontwist1)};
-\diagram* {(4gluon) -- [boson] (outgoingfield)};
-\diagram* {(4gluon) -- [boson] (outgoingwilsontwist1)};
-\vertex[left=0.5cm of infinity](auxpoint);
-\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
-\end{feynman}
-\end{tikzpicture}
-\vspace{1cm}
-\def \thelable {A1}
-\begin{tikzpicture}
-\begin{feynman}
-\vertex(field);
-\vertex[right=2.0cm of field](wilsontwist1);
-\vertex[right=3.5cm of wilsontwist1](infinity);
-\vertex[right=1.0cm of field](wilsoncoupling);
-\vertex[below=2cm of field](outgoingfield);
-\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
-\diagram* {(field) -- [scalar] (infinity)};
-\diagram* {(field) -- [boson] (outgoingfield)};
-\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
-\diagram* {(wilsoncoupling) -- [boson, quarter left] (field)};
-\vertex[left=0.5cm of infinity](auxpoint);
-\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
-\end{feynman}
-\end{tikzpicture}
-\vspace{1cm}\hspace{0.5cm}
-\def \thelable {A1'}
-\begin{tikzpicture}
-\begin{feynman}
-\vertex(field);
-\vertex[right=2.0cm of field](wilsontwist1);
-\vertex[right=3.5cm of wilsontwist1](infinity);
-\vertex[right=1.0cm of wilsontwist1](wilsoncoupling);
-\vertex[below=2cm of field](outgoingfield);
-\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
-\diagram* {(field) -- [scalar] (infinity)};
-\diagram* {(field) -- [boson] (outgoingfield)};
-\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
-\diagram* {(wilsoncoupling) -- [boson, quarter left] (field)};
-\vertex[left=0.5cm of infinity](auxpoint);
-\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
-\end{feynman}
-\end{tikzpicture}
-\vspace{1cm}\hspace{0.5cm}
-\def \thelable {B1}
-\begin{tikzpicture}
-\begin{feynman}
-\vertex(field);
-\vertex[right=2.0cm of field](wilsontwist1);
-\vertex[right=3.5cm of wilsontwist1](infinity);
-\vertex[right=1.0cm of field](wilsoncoupling);
-\vertex[below=2cm of field](outgoingfield);
-\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
-\diagram* {(field) -- [scalar] (infinity)};
-\diagram* {(field) -- [boson] (outgoingfield)};
-\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
-\diagram* {(wilsoncoupling) -- [boson, quarter right] (wilsontwist1)};
-\vertex[left=0.5cm of infinity](auxpoint);
-\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
-\end{feynman}
-\end{tikzpicture}
-\vspace{1cm}
-\def \thelable {B1'}
-\begin{tikzpicture}
-\begin{feynman}
-\vertex(field);
-\vertex[right=2.0cm of field](wilsontwist1);
-\vertex[right=3.5cm of wilsontwist1](infinity);
-\vertex[right=1.0cm of wilsontwist1](wilsoncoupling);
-\vertex[below=2cm of field](outgoingfield);
-\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
-\diagram* {(field) -- [scalar] (infinity)};
-\diagram* {(field) -- [boson] (outgoingfield)};
-\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
-\diagram* {(wilsoncoupling) -- [boson, quarter left] (wilsontwist1)};
-\vertex[left=0.5cm of infinity](auxpoint);
-\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
-\end{feynman}
-\end{tikzpicture}
-\vspace{1cm}\hspace{0.5cm}
-\def \thelable {AB}
-\begin{tikzpicture}
-\begin{feynman}
-\vertex(field);
-\vertex[right=2.0cm of field](wilsontwist1);
-\vertex[right=3.5cm of wilsontwist1](infinity);
-\vertex[below=2cm of field](outgoingfield);
-\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
-\diagram* {(field) -- [scalar] (infinity)};
-\diagram* {(field) -- [boson] (outgoingfield)};
-\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
-\diagram* {(wilsontwist1) -- [boson, quarter left] (field)};
-\vertex[left=0.5cm of infinity](auxpoint);
-\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
-\end{feynman}
-\end{tikzpicture}
-\vspace{1cm}\hspace{0.5cm}
-\def \thelable {A2}
-\begin{tikzpicture}
-\begin{feynman}
-\vertex(field);
-\vertex[right=2.0cm of field](wilsontwist1);
-\vertex[right=3.5cm of wilsontwist1](infinity);
-\vertex[below=2cm of field](outgoingfield);
-\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
-\vertex[below=1cm of field](3gluon);
-\diagram* {(field) -- [scalar] (infinity)};
-\diagram* {(field) -- [boson] (3gluon) -- [boson, half right] (field)};
-\diagram* {(wilsontwist1) -- [boson] (outgoingwilsontwist1)};
-\diagram* {(3gluon) -- [boson] (outgoingfield)};
-\vertex[left=0.5cm of infinity](auxpoint);
-\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
-\end{feynman}
-\end{tikzpicture}
-\vspace{1cm}
-\def \thelable {B2}
-\begin{tikzpicture}
-\begin{feynman}
-\vertex(field);
-\vertex[right=2.0cm of field](wilsontwist1);
-\vertex[right=3.5cm of wilsontwist1](infinity);
-\vertex[below=2cm of field](outgoingfield);
-\vertex[below=2cm of wilsontwist1](outgoingwilsontwist1);
-\vertex[below=1cm of wilsontwist1](3gluon);
-\diagram* {(field) -- [scalar] (infinity)};
-\diagram* {(wilsontwist1) -- [boson] (3gluon) -- [boson, half right] (wilsontwist1)};
-\diagram* {(field) -- [boson] (outgoingfield)};
-\diagram* {(3gluon) -- [boson] (outgoingwilsontwist1)};
-\vertex[left=0.5cm of infinity](auxpoint);
-\vertex[below=1.5cm of auxpoint](label){\(\thelable\)};
-\end{feynman}
-\end{tikzpicture}
+operators with this twist should look have the form
+\begin{align}
+	\int \dx \sigma \ft_{\mu+} \wil{zn}{\sigma n} \ft_{\nu +} \wil{\sigma }{-\infty n}
+\end{align}
+Problably it is ok to ignore the integraion which should be kept until the end anyway? 
+Like i have learned before the color of the whole object is connected, and just one index is open here. 
+so I need to know what to do for: 
+
+no disturbance
+disturbance in first path
+disturbance in second path
+\begin{align}
+	&\ft_{\mu+}^{A}  \ft_{\nu +}^{B} T^{B}_{AC}
+	\\
+	&\imag g \int_{\sigma}^{z} \dx \tau \ft_{\mu+}^{A} B_+^B(\tau n) T^B_{AC}  \ft_{\nu +}^{D}T^D_{CE}
+	\\
+	&\imag g \int_{-\infty}^{\sigma} \dx \tau \ft_{\mu+}^{A} \ft_{\nu +}^{B}T^{B}_{AC} B_+^D(\tau n) T^D_{CE}
+\end{align}
+Note: I will compute for antisymmetric part of tensor: (i know it is fully as) $partial_\mu A_M$, since $M$ is capital $\mu$. at some convenient point in computation i will subract interchanged term and replace $M$ by $+$.  Same for $\nu \leftrightarrow N$.
+with this:
+
+Diagram A:
+\begin{align}
+	&\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\\
+	&\rightarrow
+	\\
+	\contraction[3ex]{}{\ft}{_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha}}{B}
+	\contraction[2ex]{\ft_{\mu M}^{A} \imag g}{B}{_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x)}{B}
+	&\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\nl
+	+
+	\contraction[3ex]{}{\ft}{_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x)}{B}
+	\contraction[2ex]{\ft_{\mu M}^{A} \imag g}{B}{_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha}}{B}
+	\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}	
+\end{align}
+
+I claim that the computation is - after computing color - 100\% identical to the computation for twist 1. The intermediate field is simply ignored. (one of course has to add the diagram $A'$).
+color is 
+\begin{align}
+	(\delta^{AB'} \delta^{BC'} -\delta^{AC'}\delta^{BB'}) f^{A'B'C'} T^{B}_{AC} T^{D}_{CE}
+	&= - \imag f^{A'AB}f^{BAC} T^D_{CE}(1-1)
+	\\
+	&=
+	\imag C_A T_{A'E}^D
+\end{align}
+so if i trust my intuition i end with the expression
+\begin{align}
+	\pm\int_{-\infty}^{\pm z} \dx \sigma\frac{  g^2 C_A}{4\pi^2 \epsilon} \left(-1+\ln\left(\frac{\pm\imag \pphat}{\delta}\right)\right)
+	\ft_{\mu +}^{A'}(\pm zn)\ft_{\nu +}^D(\sigma n)T^D_{A'E}
+\end{align}
+all $+$-es are for field at $zn$, and all $-$-es are for other case. Minuses i am not so sure, should check. Most likely there is a sign flip in this expression. 
+I need to check it.
+
+Diagram B:
+here i show full computation.
+we start with the same expression as for diagram A. 
+\begin{align}
+	&\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\\
+	&\rightarrow
+	\\
+	&=
+	\contraction[2ex]{\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} }{\ft}{_{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha}}{B}
+	\contraction[3ex]{\ft_{\mu M}^{A} \imag g}{B}{_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x)}{B}
+	\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\nl
+	\contraction[3ex]{+\ft_{\mu M}^{A} \imag g }{B}{_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha}}{B}
+	\contraction[2ex]{+\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC}}{\ft}{_{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x)}{B}
+	+\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+\end{align}
+unfortunately i forgot to put arguments, on the fields of the operator, but they are clear.
+
+the color factor requires the identity for 3 structure function product. 
+it can de easily derived from Jacobi-identity (for structure functions) plus identity for product of two structure functions.
+the formula reads
+\begin{align}
+	f^{DEA}f^{EFB}f^{FDC} &= \frac{1}{2}C_A f^{ABC}
+\end{align}
+The color factor compuation for this diagrams is
+\begin{align}
+	 T^{B}_{AC} T^{D}_{CE} f^{A'B'C'}( \delta^{BC}\delta^{DB'} + \delta^{BB'}\delta^{DC'})
+	&=
+	-(-\imag)^2f^{CBA}f^{BDA'}f^{DCE} (1-1)
+	\\
+	&=
+	\frac{- C_A}{2}(-\imag)^2f^{AA'E} (1-1)
+\end{align}
+again the minus is between different possibilities of contracting the fields. 
+We can remove the remaining structure function back to the color matrix to restore the initial expression.
+\begin{align}
+ T^{B}_{AC} T^{D}_{CE} f^{A'B'C'}( \delta^{BC}\delta^{DB'} + \delta^{BB'}\delta^{DC'})
+	&=
+	\frac{-\imag C_A}{2} T^{A'}_{AE} (1-1)
+\end{align}
+
+
+The terms yield
+
+\begin{align}
+	&-\imag^2 g^2 \ft_{\mu M}^{A} \int \ddx  A_\iota^{A'}(x)\frac{-\imag C_A}{2} T^{A'}_{AE}v^{\iota \alpha\beta\gamma}
+	\\
+	&\propagator_{+\gamma}(\tau n- x) \partial_{\nu} \partial_{\alpha}\propagator_{N\beta}(\sigma n -x) - \partial_{\alpha}\propagator_{+ \beta}(\tau n - x)\partial_{\nu}\propagator_{N \gamma}(\sigma n-x)
+\end{align}
+
+always keep in mind to which argument the derivatives are related. I do omit the extra term arising from double derivative on the propagator, since its contribution is null (Lorentz contracted is 0)
+
+\begin{align}
+	&-\imag^2 g^2 \ft_{\mu M}^{A} \int \ddx  A_\iota^{A'}(x)\frac{-\imag C_A}{2} T^{A'}_{AE}v^{\iota \alpha\beta\gamma}\Gamma^2\left(\frac{d}{2}-1\right)\frac{1}{4^2\pi^\frac{d}{2}}
+	\\
+	&\frac{1}{\left(-(\tau n -x)^2+\imag \epsilon\right)^{\frac{d}{2}-1}}\frac{4\left(\frac{d}{2}-1\right)\frac{d}{2}(\sigma n -x)_\nu(x-\sigma n)_\alpha}{\left(-(\sigma n -x)^2+\imag \epsilon\right)^{\frac{d}{2}+1}}\metric_{\gamma +}\metric_{N \beta}
+	\nl
+	-\frac{-2\left(\frac{d}{2}-1\right)(x -\tau n)_\alpha}{\left(-(\tau n -x)^2+\imag \epsilon\right)^{\frac{d}{2}}}\frac{-2\left(\frac{d}{2}-1\right)( \sigma n -x )_\nu}{\left(-(\sigma n -x)^2+\imag \epsilon\right)^{\frac{d}{2}}}\Gamma(d) \metric_{\beta +}\metric_{N \gamma}
+\end{align}
+
+\begin{align}
+	&-\imag^2 g^2 \ft_{\mu M}^{A} \int \ddx  A_\iota^{A'}(x)\frac{-\imag C_A}{2} T^{A'}_{AE}v^{\iota \alpha\beta\gamma}\Gamma^2\left(\frac{d}{2}-1\right)\frac{1}{4^2\pi^\frac{d}{2}}4 \frac{1}{\Gamma^2\left(\frac{d}{2}-1\right)}
+	\\
+	&\int_0^1 \dx u u^{\frac{d}{2}-2}\overline u^{\frac{d}{2}}\frac{-x_\nu(x-\sigma n)_\alpha}{\left(-u(\tau n -x)^2-\overline u(\sigma n -x)^2+\imag \epsilon\right)^{d}}\metric_{\gamma +}\metric_{N \beta}
+	\nl
+	+\int_0^1 \dx u u^{\frac{d}{2}-1}\overline u^{\frac{d}{2}-1}\frac{x_\nu(x- \tau  n )_\alpha}{\left(-u(\tau n -x)^2-\overline u(\sigma n -x)^2+\imag \epsilon\right)^{d}}\metric_{\beta +}\metric_{N \gamma}
+\end{align}
+
+The shifts in this setup are:
+\begin{align}
+	\tau \rightarrow &\tau + \sigma \text{   first shift}
+	\\
+	x \rightarrow & x + u\tau n + \sigma n
+	\\
+	x-\sigma n \rightarrow & x + u \tau n
+	\\
+	x-\tau n \rightarrow & x  - \overline u \tau n 
+\end{align}
+compute metric
+\begin{align}
+	\metric_{\gamma +}\metric_{N \beta}v_{\iota \alpha \beta\gamma} 
+	&=
+	2(\metric_{\iota N}\metric_{\alpha +} - \metric_{\iota+ }\metric_{\alpha N})
+	\\
+	&=
+	-\metric_{\beta +}\metric_{N \gamma}v_{\iota \alpha \beta\gamma} 
+\end{align}
+Hence another relative sign between term and identical metric term
+Have:
+\begin{align}
+	&-\imag^2 g^2 \ft_{\mu M}^{A} \int \ddx  A_\iota^{A'}(x)\frac{-\imag C_A}{2} T^{A'}_{AE}\Gamma^2\left(\frac{d}{2}-1\right)\frac{1}{4^2\pi^\frac{d}{2}}4 \frac{1}{\Gamma^2\left(\frac{d}{2}-1\right)}\int_0^1 \dx u u^{\frac{d}{2}-2}\overline u^{\frac{d}{2}-1}2(\metric_{\iota N}\metric_{\alpha +} - \metric_{\iota+ }\metric_{\alpha N})
+	\\
+	&\frac{-\overline u x_\nu(x+u \tau  n)_\alpha- u x_\nu(x - \overline u \tau n )_\alpha }{\left(-x^2+\imag \epsilon\right)^{d}} =\frac{-x_\nu x_\alpha}{\left(-x^2+\imag \epsilon\right)^{d}}
+\end{align}
+Then from integration we have doulbe derivative
+
+\begin{align}
+	\int \ddx x \frac{-x_\nu x_\alpha x_\rho x_\kappa}{\left(-x^2+\imag \epsilon\right)^{d}} \partial_\rho \partial_\kappa A^{A'}(u\tau n + \sigma n)
+	&=
+	\frac{-\imag \pi^{\frac{d}{2}}}{4(2-\frac{d}{2})\Gamma(d)}\left(  \metric_{\nu \alpha} \metric_{\rho \kappa}+ \metric_{\nu \rho} \metric_{\alpha\kappa} + \metric_{\nu \kappa} \metric_{\alpha \rho} \right) \partial^\kappa\partial^\rho A_\iota^{A'} (\sigma n+u\tau n)
+\end{align}
+now again contract metrics: 
+
+\begin{align}
+	\left(  \metric_{\nu \alpha} \metric_{\rho \kappa}+ \metric_{\nu \rho} \metric_{\alpha\kappa} + \metric_{\nu \kappa} \metric_{\alpha \rho} \right) \partial^\kappa\partial^\rho A_\iota^{A'} (\sigma n+u\tau n)(\metric_{\iota N}\metric_{\alpha +} - \metric_{\iota+ }\metric_{\alpha N})
+	&=
+	2 \partial_+\left( \partial_\nu A_+ - \partial_+A_\nu\right)^{A'}(\sigma n + u \tau n)
+\end{align}
+Total , combination of last two steps
+\begin{align}
+	&-\imag^2 g^2 \ft_{\mu M}^{A}\frac{-\imag C_A}{2} T^{A'}_{AE}\Gamma^2\left(\frac{d}{2}-1\right)\frac{1}{4^2\pi^\frac{d}{2}}4 \frac{1}{\Gamma^2\left(\frac{d}{2}-1\right)}
+	\\
+	&\int_0^1 \dx u u^{\frac{d}{2}-2}\overline u^{\frac{d}{2}-1}2~2 \partial_+\left( \partial_\nu A_+ - \partial_+A_\nu\right)^{A'}(\sigma n + u \tau n)\frac{-\imag \pi^{\frac{d}{2}}}{4(2-\frac{d}{2})\Gamma(d)}
+	\\
+	&=
+	\int_0^1 \dx u \overline u\frac{(-1)^3\imag^{4}g^2C_A2^2}{4^3 2^1\pi^2\epsilon}F_{\mu M}^{A}(zn)T^{A'}_{AE}\ft_{\mu +}^{A'}(\sigma n + u \tau n)
+\end{align}
+of course, there are the two integrals, over $\tau$ and $\sigma$. first is necessary for the computation, the other one belongs to the operator itself.
+i already shifted the $\tau $ integral by $+\sigma$. Now i want to subtract $\sigma$ again but add $z$
+\begin{align}
+	\int_{-\infty}^{0} \dx \tau \int_0^1 \dx u \overline u \ft_{\mu +}^{A'}(u zn + \overline u\sigma n + u \tau n)
+	&=
+	is it corr like this?
+\end{align}
 \ifdefined\mainprogram{}
 \else
 \include{end}
