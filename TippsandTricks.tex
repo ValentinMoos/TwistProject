@@ -48,7 +48,14 @@ own adaption for four elements in numerator:
 	&=
 	\frac{\imag \pi^{\frac{d}{2}}}{4(2-\frac{d}{2})\Gamma\left(d\right)}\left(\metric^{\mu\nu}\metric^{\rho \sigma} + \metric^{\mu \rho} \metric^{\nu \sigma} +\metric^{\mu \sigma}\metric^{\nu \rho}\right)	
 \end{align}
-
+\begin{align}
+\int_{-\infty}^{0} \dx \tau \int_0^1 \dx u \overline u \partial_+f(y+  u \tau n)
+&=
+-\int \frac{\ddx p}{(2\pi)^d}\left( \ln\left(\frac{\imag \pp}{\delta}\right) -1\right) \expo^{\imag \skp{p}{y}}f(p)
+\\
+&=
+\left(1-\ln\left(\frac{\imag \pp}{\delta}\right)\right)f(\sigma n)
+\end{align}
 \ifdefined\mainprogram{}
 \else
 \include{end}
