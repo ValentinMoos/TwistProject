@@ -11,21 +11,7 @@
 \end{itemize}
 
 
-Aux:
-\begin{align}
-	\partial_{x^\alpha} \frac{1}{ \left(-(z-x)^2+\imag\epsilon\right)^{n}}
-	&=
-	\frac{-2n(x-z)_\alpha}{ \left(-(z-x)^2+\imag\epsilon\right)^{n+1}}
-	\\
-	\partial_{z^\mu}\partial_{x^\alpha} \frac{1}{ \left(-(z-x)^2+\imag\epsilon\right)^{n}}
-	&=
-	\partial_{z^\mu}\frac{-2n(x-z)_\alpha}{ \left(-(z-x)^2+\imag\epsilon\right)^{n+1}}
-	\\
-	&=
-	\frac{4n(n+1)(z-x)_\mu(x-z)_\alpha}{ \left(-(z-x)^2+\imag\epsilon\right)^{n+2}} + 
-	\frac{2n\metric_{\mu\alpha}}{ \left(-(z-x)^2+\imag\epsilon\right)^{n+1}}
-\end{align}
-Even better: 
+Auxiliaries: 
 \begin{align}
 	\partial_{y^\alpha} \frac{1}{ \left(-(y-w)^2+\imag\epsilon\right)^{n}}
 	&=
@@ -35,6 +21,10 @@ Even better:
 	&=
 	\frac{4n(n+1)(y-w)_\alpha(w-y)_\beta}{ \left(-(y-w)^2+\imag\epsilon\right)^{n+2}}+\frac{2n\metric_{\alpha\beta}}{ \left(-(y-w)^2+\imag\epsilon\right)^{n+1}}
 \end{align}
+\begin{align}
+	\int_{-\infty}^0 \dx \sigma \int _{-\infty}^\sigma \dx \tau f(\sigma, \tau)&=\int_{-\infty}^0 \dx \sigma \int _{-\infty}^0 \dx \tau f(\sigma + \tau, \tau) 
+\end{align}
+
 \begin{align}
 	\int \dx ^d x \frac{x^\mu x^\nu}{\left(-x^2+\imag \epsilon\right)^{d-1}}
 	&=
