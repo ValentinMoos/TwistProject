@@ -294,7 +294,53 @@ Result table:
 	\caption{gluon twist 2; the "correction" is the factor to the "default" expression. Together it is the result for the one loop diagram with the corresponding Name. For example, diagram $B+B'=\frac{-g^2C_A}{2(4\pi)^2\epsilon}{\color{blue}\ft_{\mu M}^{A}(zn)\int_{-\infty}^z \dx\sigma}	\left(1-\ln\left(\frac{\imag \pp(\sigma)}{\delta}\right)\right){\color{blue}\ft_{\nu +}^{A'}(\sigma n)T^{A'}_{AE}}$. In blue the "default" expression, for clarification. }
 	\label{Resultsgluontwist2table}
 \end{table}
+again compute diagrams, now each diagram individually.
 
+$A'$:
+\begin{align}
+	&\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\\
+	&\rightarrow
+	\\
+	\contraction[3ex]{}{\ft}{_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha}}{B}
+	\contraction[2ex]{\ft_{\mu M}^{A} \imag g}{B}{_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x)}{B}
+	&\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\nl
+	+
+	\contraction[3ex]{}{\ft}{_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x)}{B}
+	\contraction[2ex]{\ft_{\mu M}^{A} \imag g}{B}{_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha}}{B}
+	\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}	
+\end{align}
+Since the computation was done already: I only have to compute the color factor for this term: it is
+\begin{align}
+	T^{B}_{AC} f^{A'B'C'} T^D_{CE} (\delta^{BC'}\delta^{AB'} - \delta^{BB'} \delta^{AC'}) &= +\imag C_A \delta^{A'C} (1-1) T^D_{CE}
+\end{align}
+
+The remaining term is 
+\begin{align}
+	-\imag^2 g^2 \ft_{\nu +} ^D\int \ddx x A_\iota^{A'}(x) \int ^z_\sigma \dx \tau \bigg( \partial_\mu \partial_\alpha \propagator_{M\beta}(zn-x) \propagator_{+\gamma} (\tau n - x) - \partial_\mu \propagator_{M\gamma}(zn-x) \partial_\alpha\propagator_{\+\beta}(\tau n -x)\bigg)  v^{\iota \alpha\beta\gamma}
+\end{align}
+
+\begin{align}
+	&\int \ddx x  A_\iota^{A'}(x) \bigg( \partial_\mu \partial_\alpha \propagator_{M\beta}(zn-x) \propagator_{+\gamma} (\tau n - x) - \partial_\mu \propagator_{M\gamma}(zn-x) \partial_\alpha\propagator_{\+\beta}(\tau n -x)\bigg)  v^{\iota \alpha\beta\gamma}
+	\\
+	&=
+	\int \ddx x  A_\iota^{A'}(x) \frac{\Gamma^2\left(\frac{d}{-1}\right)}{4^2\pi^{d}}\bigg( \frac{4\left(\frac{d}{2}-1\right)\frac{d}{2}(x-zn)_\alpha (zn-x)_\mu}{\left(-(zn-x)^2+\imag \epsilon\right)^{\frac{d}{2}+1}}\frac{1}{\left(-(\tau n-x)^2+\imag \epsilon\right)^{\frac{d}{2}-1}}\metric_{M\beta}\metric_{+\gamma} 
+	\nl
+	- \frac{-2\left(\frac{d}{-1}\right)(zn-x)_\mu}{\left(-(zn-x)^2+\imag \epsilon\right)^{\frac{d}{2}}}\frac{-2\left(\frac{d}{-1}\right)(x- \tau n)_\alpha}{\left(-(\tau n-x)^2+\imag \epsilon\right)^{\frac{d}{2}}}\metric_{M\gamma}\metric_{\+\beta}(\tau n -x)\bigg)  v^{\iota \alpha\beta\gamma}
+	\\
+	&=
+	\int _0^1 \dx u \int \ddx x  A_\iota^{A'}(x) \frac{4\Gamma(d-1)}{4^2\pi^{d}}\bigg( \frac{(x-zn)_\alpha-x_\mu}{\left(-x^2+\imag \epsilon\right)^{d}}\metric_{M\beta}\metric_{+\gamma} 
+	-\frac{-x_\mu(x- \tau n)_\alpha}{\left(-x^2+\imag \epsilon\right)^{d}}\metric_{M\gamma}\metric_{\+\beta}(\tau n -x)\bigg)  v^{\iota \alpha\beta\gamma}
+	\\
+	&=
+	\int _0^1 \dx u \int \ddx x  A_\iota^{A'}(x) \frac{4\Gamma(d-1)}{4^2\pi^{d}}\bigg( \frac{(x-zn)_\alpha-x_\mu}{\left(-x^2+\imag \epsilon\right)^{d}}\metric_{M\beta}\metric_{+\gamma} 
+	-\frac{-x_\mu(x- \tau n)_\alpha}{\left(-x^2+\imag \epsilon\right)^{d}}\metric_{M\gamma}\metric_{\+\beta}(\tau n -x)\bigg)  2\left(\metric^{\iota M } \metric^{\alpha +}  HEREHREHRH\right) 
+	\\
+	&\int_0^1 \dx u \overline u\frac{(-1)\imag}{4^2 2^1\pi^2\epsilon}F_{\mu M}^{A}(zn)T^{A'}_{AE}\partial_+\ft_{\nu +}^{A'}(\sigma n +  u \tau n)
+\end{align}
+
+for the integral 
 
 \ifdefined\mainprogram{}
 \else
