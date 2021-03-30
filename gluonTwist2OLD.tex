@@ -1,0 +1,279 @@
+\ifdefined\mainprogram{}
+\else
+\include{head}
+\fi
+Diagram A:
+\begin{align}
+	&\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\\
+	&\rightarrow
+	\\
+	\contraction[3ex]{}{\ft}{_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha}}{B}
+	\contraction[2ex]{\ft_{\mu M}^{A} \imag g}{B}{_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x)}{B}
+	&\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\nl
+	+
+	\contraction[3ex]{}{\ft}{_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x)}{B}
+	\contraction[2ex]{\ft_{\mu M}^{A} \imag g}{B}{_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha}}{B}
+	\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}	
+\end{align}
+
+I claim that the computation is - after computing color - 100\% identical to the computation for twist 1. The intermediate field is simply ignored. (one of course has to add the diagram $A'$).
+color is 
+\begin{align}
+	(\delta^{AB'} \delta^{BC'} -\delta^{AC'}\delta^{BB'}) f^{A'B'C'} T^{B}_{AC} T^{D}_{CE}
+	&= - \imag f^{A'AB}f^{BAC} T^D_{CE}(1-1)
+	\\
+	&=
+	\imag C_A T_{A'E}^D
+\end{align}
+so if i trust my intuition i end with the expression
+\begin{align}
+	\pm\int_{-\infty}^{\pm z} \dx \sigma\frac{  g^2 C_A}{4\pi^2 \epsilon} \left(-1+\ln\left(\frac{\pm\imag \pphat}{\delta}\right)\right)
+	\ft_{\mu +}^{A'}(\pm zn)\ft_{\nu +}^D(\sigma n)T^D_{A'E}
+\end{align}
+all $+$-es are for field at $zn$, and all $-$-es are for other case. Minuses i am not so sure, should check. Most likely there is a sign flip in this expression. 
+I need to check it.
+
+Diagram B:
+here i show full computation.
+we start with the same expression as for diagram A. 
+\begin{align}
+	&\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\\
+	&\rightarrow
+	\\
+	&=
+	\contraction[2ex]{\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} }{\ft}{_{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha}}{B}
+	\contraction[3ex]{\ft_{\mu M}^{A} \imag g}{B}{_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x)}{B}
+	\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\nl
+	\contraction[3ex]{+\ft_{\mu M}^{A} \imag g }{B}{_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha}}{B}
+	\contraction[2ex]{+\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC}}{\ft}{_{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x)}{B}
+	+\ft_{\mu M}^{A} \imag g B_+^B  T^B_{AC} \ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+\end{align}
+unfortunately i forgot to put arguments, on the fields of the operator, but they are clear.
+
+the color factor requires the identity for 3 structure function product. 
+it can de easily derived from Jacobi-identity (for structure functions) plus identity for product of two structure functions.
+the formula reads
+\begin{align}
+	f^{DEA}f^{EFB}f^{FDC} &= \frac{1}{2}C_A f^{ABC}
+\end{align}
+The color factor compuation for this diagrams is
+\begin{align}
+	 T^{B}_{AC} T^{D}_{CE} f^{A'B'C'}( \delta^{BC}\delta^{DB'} + \delta^{BB'}\delta^{DC'})
+	&=
+	-(-\imag)^2f^{CBA}f^{BDA'}f^{DCE} (1-1)
+	\\
+	&=
+	\frac{- C_A}{2}(-\imag)^2f^{AA'E} (1-1)
+\end{align}
+again the minus is between different possibilities of contracting the fields. 
+We can remove the remaining structure function back to the color matrix to restore the initial expression.
+\begin{align}
+ T^{B}_{AC} T^{D}_{CE} f^{A'B'C'}( \delta^{BC}\delta^{DB'} + \delta^{BB'}\delta^{DC'})
+	&=
+	\frac{-\imag C_A}{2} T^{A'}_{AE} (1-1)
+\end{align}
+
+
+The terms yield
+
+\begin{align}
+	&-\imag^2 g^2 \ft_{\mu M}^{A} \int \ddx  A_\iota^{A'}(x)\frac{-\imag C_A}{2} T^{A'}_{AE}v^{\iota \alpha\beta\gamma}
+	\\
+	&\propagator_{+\gamma}(\tau n- x) \partial_{\nu} \partial_{\alpha}\propagator_{N\beta}(\sigma n -x) - \partial_{\alpha}\propagator_{+ \beta}(\tau n - x)\partial_{\nu}\propagator_{N \gamma}(\sigma n-x)
+\end{align}
+
+always keep in mind to which argument the derivatives are related. I do omit the extra term arising from double derivative on the propagator, since its contribution is null (Lorentz contracted is 0)
+
+\begin{align}
+	&-\imag^2 g^2 \ft_{\mu M}^{A} \int \ddx  A_\iota^{A'}(x)\frac{-\imag C_A}{2} T^{A'}_{AE}v^{\iota \alpha\beta\gamma}\Gamma^2\left(\frac{d}{2}-1\right)\frac{1}{4^2\pi^\frac{d}{2}}
+	\\
+	&\frac{1}{\left(-(\tau n -x)^2+\imag \epsilon\right)^{\frac{d}{2}-1}}\frac{4\left(\frac{d}{2}-1\right)\frac{d}{2}(\sigma n -x)_\nu(x-\sigma n)_\alpha}{\left(-(\sigma n -x)^2+\imag \epsilon\right)^{\frac{d}{2}+1}}\metric_{\gamma +}\metric_{N \beta}
+	\nl
+	-\frac{-2\left(\frac{d}{2}-1\right)(x -\tau n)_\alpha}{\left(-(\tau n -x)^2+\imag \epsilon\right)^{\frac{d}{2}}}\frac{-2\left(\frac{d}{2}-1\right)( \sigma n -x )_\nu}{\left(-(\sigma n -x)^2+\imag \epsilon\right)^{\frac{d}{2}}}\Gamma(d) \metric_{\beta +}\metric_{N \gamma}
+\end{align}
+
+\begin{align}
+	&-\imag^2 g^2 \ft_{\mu M}^{A} \int \ddx  A_\iota^{A'}(x)\frac{-\imag C_A}{2} T^{A'}_{AE}v^{\iota \alpha\beta\gamma}\Gamma^2\left(\frac{d}{2}-1\right)\frac{1}{4^2\pi^\frac{d}{2}}4 \frac{1}{\Gamma^2\left(\frac{d}{2}-1\right)}
+	\\
+	&\int_0^1 \dx u u^{\frac{d}{2}-2}\overline u^{\frac{d}{2}}\frac{-x_\nu(x-\sigma n)_\alpha}{\left(-u(\tau n -x)^2-\overline u(\sigma n -x)^2+\imag \epsilon\right)^{d}}\metric_{\gamma +}\metric_{N \beta}
+	\nl
+	+\int_0^1 \dx u u^{\frac{d}{2}-1}\overline u^{\frac{d}{2}-1}\frac{x_\nu(x- \tau  n )_\alpha}{\left(-u(\tau n -x)^2-\overline u(\sigma n -x)^2+\imag \epsilon\right)^{d}}\metric_{\beta +}\metric_{N \gamma}
+\end{align}
+
+The shifts in this setup are:
+\begin{align}
+	\tau \rightarrow &\tau + \sigma \text{   first shift}
+	\\
+	x \rightarrow & x + u\tau n + \sigma n
+	\\
+	x-\sigma n \rightarrow & x + u \tau n
+	\\
+	x-\tau n \rightarrow & x  - \overline u \tau n 
+\end{align}
+compute metric
+\begin{align}
+	\metric_{\gamma +}\metric_{N \beta}v_{\iota \alpha \beta\gamma} 
+	&=
+	2(\metric_{\iota N}\metric_{\alpha +} - \metric_{\iota+ }\metric_{\alpha N})
+	\\
+	&=
+	-\metric_{\beta +}\metric_{N \gamma}v_{\iota \alpha \beta\gamma} 
+\end{align}
+Hence another relative sign between term and identical metric term
+Have:
+\begin{align}
+	&-\imag^2 g^2 \ft_{\mu M}^{A} \int \ddx  A_\iota^{A'}(x+ u \tau n+ \sigma n)\frac{-\imag C_A}{2} T^{A'}_{AE}\Gamma^2\left(\frac{d}{2}-1\right)\frac{1}{4^2\pi^\frac{d}{2}}4 \frac{1}{\Gamma^2\left(\frac{d}{2}-1\right)}\int_0^1 \dx u u^{\frac{d}{2}-2}\overline u^{\frac{d}{2}-1}2(\metric_{\iota N}\metric_{\alpha +} - \metric_{\iota+ }\metric_{\alpha N})
+	\\
+	&\frac{-\overline u x_\nu(x+ u \tau  n)_\alpha- u x_\nu(x - \overline u \tau n )_\alpha }{\left(-x^2+\imag \epsilon\right)^{d}} =\frac{-x_\nu x_\alpha}{\left(-x^2+\imag \epsilon\right)^{d}}
+\end{align}
+Then from integration we have double derivative
+
+\begin{align}
+	\int \ddx x \frac{-x_\nu x_\alpha x_\rho x_\kappa}{\left(-x^2+\imag \epsilon\right)^{d}} \partial_\rho \partial_\kappa A^{A'}(u\tau n + \sigma n)
+	&=
+	\frac{-\imag \pi^{\frac{d}{2}}}{4(2-\frac{d}{2})\Gamma(d)}\left(  \metric_{\nu \alpha} \metric_{\rho \kappa}+ \metric_{\nu \rho} \metric_{\alpha\kappa} + \metric_{\nu \kappa} \metric_{\alpha \rho} \right) \partial^\kappa\partial^\rho A_\iota^{A'} (\sigma n+ u\tau n)
+\end{align}
+now again contract metrics: 
+
+\begin{align}
+	\left(  \metric_{\nu \alpha} \metric_{\rho \kappa}+ \metric_{\nu \rho} \metric_{\alpha\kappa} + \metric_{\nu \kappa} \metric_{\alpha \rho} \right) \partial^\kappa\partial^\rho A_\iota^{A'} (\sigma n+u\tau n)(\metric_{\iota N}\metric_{\alpha +} - \metric_{\iota+ }\metric_{\alpha N})
+	&=
+	2 \partial_+\left( \partial_\nu A_+ - \partial_+A_\nu\right)^{A'}(\sigma n + u \tau n)
+\end{align}
+Total , combination of last two steps
+\begin{align}
+	&-\imag^2 g^2 \ft_{\mu M}^{A}\frac{-\imag C_A}{2} T^{A'}_{AE}\Gamma^2\left(\frac{d}{2}-1\right)\frac{1}{4^2\pi^\frac{d}{2}}4 \frac{1}{\Gamma^2\left(\frac{d}{2}-1\right)}
+	\\
+	&\int_0^1 \dx u u^{\frac{d}{2}-2}\overline u^{\frac{d}{2}-1}2~2 \partial_+\left( \partial_\nu A_+ - \partial_+A_\nu\right)^{A'}(\sigma n +  u \tau n)\frac{-\imag \pi^{\frac{d}{2}}}{4(2-\frac{d}{2})\Gamma(d)}
+	\\
+	&=
+	\int_0^1 \dx u \overline u\frac{(-1)^3\imag^{4}g^2C_A2^2}{4^3 2^1\pi^2\epsilon}F_{\mu M}^{A}(zn)T^{A'}_{AE}\partial_+\ft_{\nu +}^{A'}(\sigma n +  u \tau n)
+\end{align}
+of course, there are the two integrals, over $\tau$ and $\sigma$. first is necessary for the computation, the other one belongs to the operator itself.
+i already shifted the $\tau $ integral by $+\sigma$. Now i want to subtract $\sigma$ again but add $z$. I also show the integral over $\sigma$ now, which is from $-\infty$ to $z$, and i also shift this one. I end up
+\begin{align}
+	\int_{-\infty}^{0} \dx \tau \int_0^1 \dx u \overline u \partial_+f(y+  u \tau n)
+	&=
+	-\int \frac{\ddx p}{(2\pi)^d}\left( \ln\left(\frac{\imag \pp}{\delta}\right) -1\right) \expo^{\imag \skp{p}{y}}f(p)
+	\\
+	&=
+	\left(1-\ln\left(\frac{\imag \pp}{\delta}\right)\right)f(\sigma n)
+\end{align}
+so in my case here:
+\begin{align}
+	\frac{-g^2C_A}{2(4\pi)^2\epsilon}\ft_{\mu M}^{A}(zn)\int_{-\infty}^z \dx\sigma 	\left(1-\ln\left(\frac{\imag \pp(\sigma)}{\delta}\right)\right)\ft_{\nu +}^{A'}(\sigma n)T^{A'}_{AE}
+\end{align}
+the argument of $\pp$ indicates on which field its acting.
+
+The next diagram i want to compute is diagram AB. I think its the last out three diagrams for twist 2 which are not absolutely the same. Probably this is the most interesting. the first two are the same computation as for twist 1, essentially.
+
+the therm is
+
+\begin{align}
+	\contraction[2ex]{}{\ft}{_{\mu +}^{A} }{\ft}
+	&\ft_{\mu +}^{A} \ft _{\nu +}^D T^D_{AE}
+	\\
+	&\rightarrow
+	\contraction[2ex]{g f^{ABC} }{B}{_\mu ^B B_+^C g f^{DFH} }{B}
+gf^{ABC} B_\mu ^B B_+^C g f^{DFH} B_\nu ^F B_+^H T^D_{AE}	
+\end{align}
+I only have this contraction, since all other 3 possibilities yield zero
+Color computation yields:
+\begin{align}
+	+\imag g^2f^{DAE}f^{ABC}f^{BDH}\propagator_{\mu \nu}(zn-\sigma n)
+	\\
+	&=
+	+\frac{g^2C_A}{2}f^{ECH}\propagator_{\mu \nu}(zn-\sigma n)
+	\\
+	&=
+	\frac{-g^2C_A}{2}T^C_{HE}\propagator_{\mu \nu}(zn-\sigma n)A_+^CA_+^H
+\end{align}
+Maybe one can argue that these drop since the outgoing fields are classical so they drop in lc-gauge?
+
+0 diagrams from metric:
+the following diagrams are 0 for the reason $\metric_{++}=\metric_{\mu+}=\metric_{\nu+}=0$:\\
+$A1,A1',B1,B1',E1,E2,E3$
+The remaining computation is for the diagrams A2 and B2.
+It should be very similar to what i have seen for twist 1:
+\begin{align}
+	&g f^{ABC} B_\mu^B B_+^C (zn) \ft_{\nu +}^D T^D_{AE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\\
+	&\rightarrow
+	\contraction[3ex]{g f^{ABC}}{B}{_\mu^B B_+^C (zn) \ft_{\nu +}^D T^D_{AE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} }{B}
+	\contraction[2ex]{g f^{ABC} B_\mu^B }{B}{_+^C (zn) \ft_{\nu +}^D T^D_{AE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) }{B}
+	g f^{ABC} B_\mu^B B_+^C (zn) \ft_{\nu +}^D T^D_{AE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\nl
+	\contraction[2ex]{+g f^{ABC} B_\mu^B }{B}{_+^C (zn) \ft_{\nu +}^D T^D_{AE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} }{B}
+	\contraction[3ex]{+g f^{ABC} }{B}{_\mu^B B_+^C (zn) \ft_{\nu +}^D T^D_{AE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) }{B}
+	+g f^{ABC} B_\mu^B B_+^C (zn) \ft_{\nu +}^D T^D_{AE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+\end{align}
+apart from color it is identical to twist one, so i will not do perform the calculation in all details. color gives
+\begin{align}
+	f^{ABC}T^D_{AE}f^{A'B'C'}(\delta^{BB'}\delta{CC'}+\delta^{BC'}\delta{CB'})
+	&=
+	-\imag f^{ABC}f^{DAE}f^{A'BC}(1-1)
+	\\
+	&=-\imag C_A f^{DA'E}
+	\\
+	&=
+	C_A T^{D}_{A'E}
+\end{align}
+So color is identical ( gives factor $C_A$ and connects color indices)
+Apart from that i see no difference, either. So the result is the same:
+
+\begin{align}
+	-\frac{ g^2 C_A}{4\pi^2 \epsilon} 
+	\ft_{\mu +}^{A'}(zn)\int_{-\infty}^z \dx \sigma \ft_{\nu +}^D (\sigma n) T^D_{A'E}
+\end{align}
+
+last diagram: B2
+
+\begin{align}
+	&\ft_{\mu+}^A(zn) gf^{DBC}B_\nu^BB_+^C(\sigma n) T^D_{AE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\\
+	\rightarrow &
+	\contraction[3ex]{\ft_{\mu+}^A(zn) gf^{DBC}}{B}{_\nu^BB_+^C(\sigma n) T^D_{AE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} }{B}
+	\contraction[2ex]{\ft_{\mu+}^A(zn) gf^{DBC}B_\nu^B}{B}{_+^C(\sigma n) T^D_{AE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) }{B}
+	\ft_{\mu+}^A(zn) gf^{DBC}B_\nu^BB_+^C(\sigma n) T^D_{AE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\nl
+	\contraction[3ex]{+\ft_{\mu+}^A(zn) gf^{DBC}}{B}{_\nu^BB_+^C(\sigma n) T^D_{AE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) }{B}
+	\contraction[2ex]{+\ft_{\mu+}^A(zn) gf^{DBC}B_\nu^B}{B}{_+^C(\sigma n) T^D_{AE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha}}{B}
+	+\ft_{\mu+}^A(zn) gf^{DBC}B_\nu^BB_+^C(\sigma n) T^D_{AE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+\end{align}
+COLOR:
+\begin{align}
+	f^{DBC}T^D_{AE}f^{A'B'C'} (\delta^{BB'}\delta^{CC'}+\delta^{BC'}\delta^{CB'})
+	&=
+	\delta^{A'D}T^D_{AE}C_A(1-1)
+\end{align}
+
+again, the rest of the computation must be exactly the same. here the point for the fixed field is $\sigma n$ and not $zn$ but it is not integrated over (here) so it must be identical. the color gives the same result (just connects and $C_A$)
+FINAL:
+\begin{align}
+-\frac{ g^2 C_A}{4\pi^2 \epsilon} 
+\ft_{\mu +}^{A'}(zn)\int_{-\infty}^z \dx \sigma \ft_{\nu +}^D (\sigma n) T^D_{A'E}
+\end{align}
+
+
+\def\verticaldistance{\vspace{0.5cm}}
+\begin{table}
+	\begin{tabular}{p{2cm}p{14cm}}
+		diagram&correction \\
+		$A$ & ${\displaystyle \frac{g^2C_A}{4\pi^{\frac{d}{2}}\epsilon}\ft_{\nu +} ^D(\sigma n) T^D_{CE}\int _0^1 \dx u \frac{u}{\overline u} \left(\ft_{\mu +}^C (zn+ \overline u(\sigma -z) n) - \ft_{\mu +}^C(zn)\right)}$\verticaldistance \\
+		$A'$ & ${\displaystyle \frac{-g^2C_A}{8\pi^{\frac{d}{2}}\epsilon}\left(1-\ln\left(\frac{\imag \pp}{\delta}\right)\right)\ft_{\mu +}^{A'}(zn)\ft _{\nu +}^D(\sigma n)T^D_{A'E} }$\verticaldistance \\
+		$B$ & ${\displaystyle \frac{g^2C_A}{8\pi^{\frac{d}{2}}\epsilon} \ft_{\mu M}^{A}\int _0^1 \dx u \frac{u}{\overline u} \left(\ft_{\nu +}^{A'}(\sigma n+\overline u (z-\sigma) n)-\ft^{A'}_{\nu +}(\sigma n)\right)T^{A'}_{AE}}$ \verticaldistance \\
+		$B'$ & ${\displaystyle 	 \ft_{\mu M}^{A}\frac{-g^2C_A}{8\pi^{\frac{d}{2}}\epsilon}\left(1-\ln\left(\frac{\imag \pp}{\delta}\right)\right)\ft_{\nu+}^{A'}(\sigma n)T^{A'}_{AE}}$\verticaldistance \\
+		$A2$ & $-\frac{ g^2 C_A}{8\pi^2 \epsilon} $  \verticaldistance \\
+		$B2$ & $-\frac{ g^2 C_A}{8\pi^2 \epsilon}$\verticaldistance \\
+	\end{tabular}
+	\caption{gluon twist 2; the "correction" is the factor to the "default" expression. Together it is the result for the one loop diagram with the corresponding Name. For example, diagram $B+B'=\frac{-g^2C_A}{2(4\pi)^2\epsilon}{\color{blue}\ft_{\mu M}^{A}(zn)\int_{-\infty}^z \dx\sigma}	\left(1-\ln\left(\frac{\imag \pp(\sigma)}{\delta}\right)\right){\color{blue}\ft_{\nu +}^{A'}(\sigma n)T^{A'}_{AE}}$. In blue the "default" expression, for clarification. }
+	\label{Resultsgluontwist2table}
+\end{table}
+\ifdefined\mainprogram{}
+\else
+\include{end}
+\fi
