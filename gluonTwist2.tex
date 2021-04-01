@@ -116,13 +116,20 @@ Diagram $A'$:
 	g^2\ft _{\nu N}^D\int_{-\infty}^\sigma \dx \tau \int \ddx A^{A'}_\iota(x) \bigg( \partial_\mu \partial_\alpha \propagator_{M\beta}(zn-x) \propagator_{+\gamma}(\tau n -x) -\partial_\mu \propagator_{M\gamma}(zn-x) \partial_\alpha \propagator_{\beta+}(\tau n -x) \bigg)v^{\iota \alpha\beta\gamma}\imag \frac{C_A}{2}T^D_{A'E}
 	\\
 	&=
-	g^2\ft _{\nu N}^D\int_{-\infty}^0 \dx \tau \frac{\imag}{4\pi^{\frac{d}{2}}\epsilon}\int _0^1 \dx u u^{\frac{d}{2}-1} \overline u ^{\frac{d}{2}-2}   \partial_+ \left( \partial_\mu A_+^{A'} - \partial_+ A_\mu^{A'}\right)(zn+\overline u \tau n)\imag \frac{C_A}{2}T^D_{A'E}
+	g^2\ft _{\nu N}^D\int_{-\infty}^{\sigma - z} \dx \tau \frac{\imag}{4\pi^{\frac{d}{2}}\epsilon}\int _0^1 \dx u u^{\frac{d}{2}-1} \overline u ^{\frac{d}{2}-2}   \partial_+ \left( \partial_\mu A_+^{A'} - \partial_+ A_\mu^{A'}\right)(zn+\overline u \tau n)\imag \frac{C_A}{2}T^D_{A'E}
+	\\
+	&=
+	g^2\ft _{\nu N}^D\left(\int_{-\infty}^{0}+\int_{0}^{\sigma - z}\right) \dx \tau \frac{\imag}{4\pi^{\frac{d}{2}}\epsilon}\int _0^1 \dx u u^{\frac{d}{2}-1} \overline u ^{\frac{d}{2}-2}   \partial_+ \left( \partial_\mu A_+^{A'} - \partial_+ A_\mu^{A'}\right)(zn+\overline u \tau n)\imag \frac{C_A}{2}T^D_{A'E}
 	\\
 	&=
 	\frac{-g^2C_A}{8\pi^{\frac{d}{2}}\epsilon}\int_{-\infty}^0\dx \tau\int _0^1 \dx u u  \partial_+ \ft_{\mu +}^{A'}(zn+\overline u \tau n)\ft _{\nu +}^DT^D_{A'E}
+	\nl
+	+\frac{-g^2C_A}{8\pi^{\frac{d}{2}}\epsilon}\int_{0}^{\sigma -z}\dx \tau\int _0^1 \dx u u  \partial_+ \ft_{\mu +}^{A'}(zn+\overline u \tau n)\ft _{\nu +}^DT^D_{A'E}
 	\\
 	&=
 	\frac{-g^2C_A}{8\pi^{\frac{d}{2}}\epsilon}\left(1-\ln\left(\frac{\imag \pp}{\delta}\right)\right)\ft_{\mu +}^{A'}(zn)\ft _{\nu +}^D(\sigma n)T^D_{A'E}
+	\nl
+	+\frac{-g^2C_A}{8\pi^{\frac{d}{2}}\epsilon}\int _0^1 \dx u \frac{u}{\overline u} \left( \ft_{\mu +}^{A'}(\sigma n+ u(z-\sigma)n) - \ft_{\mu +}^{A'}(zn)\right)\ft _{\nu +}^DT^D_{A'E}
 \end{align}
 
 Diagram $B$: 
@@ -217,7 +224,99 @@ together for diagram $A1$
 	\\
 	&= \frac{- g^2 C_A }{8\pi^{\frac{d}{2}}\epsilon}\ft_{\mu +}^A(zn)\ft_{\nu +} ^D T^D_{AE}	
 \end{align}
-diagram B2: it is just the same with field at different position. but same factor! (it has to be)
+diagram B2: it is just the same with field at different position. but same factor! (it has to be)\\
+Diagram $C$: 
+\begin{align}
+	&\partial_\mu B_M^{A}  \partial_\nu B_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\bigg(-\imag g \int \ddx yA_\theta^{D'}(y) \partial_{y^\omega} B_\kappa^{E'} (y) B_\lambda^{F'}(y) \bigg) v^{\theta \omega\kappa\lambda}_{D'E'F'}
+	\\
+	&\rightarrow {\color{blue} 2} \\
+	&
+	\contraction[3ex]{\partial_\mu }{B}{_M^{A}  \partial_\nu B_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+		\bigg(-\imag g \int \ddx yA_\theta^{D'}(y) \partial_{y^\omega} }{B}
+	\contraction[2ex]{\partial_\mu B_M^{A}  \partial_\nu }{B}{_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} }{B}
+	\contraction[2ex]{\partial_\mu B_M^{A}  \partial_\nu B_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) }{B}{_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+		\bigg(-\imag g \int \ddx yA_\theta^{D'}(y) \partial_{y^\omega} B_\kappa^{E'} (y) }{B}
+	\partial_\mu B_M^{A}  \partial_\nu B_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\bigg(-\imag g \int \ddx yA_\theta^{D'}(y) \partial_{y^\omega} B_\kappa^{E'} (y) B_\lambda^{F'}(y) \bigg) v^{\theta\omega\kappa\lambda}_{D'E'F'}
+	\nl
+	+\contraction[3ex]{\partial_\mu }{B}{_M^{A}  \partial_\nu B_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+		\bigg(-\imag g \int \ddx yA_\theta^{D'}(y) \partial_{y^\omega} B_\omega^{E'} (y) }{B}
+	\contraction[2ex]{\partial_\mu B_M^{A}  \partial_\nu }{B}{_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} }{B}
+	\contraction[2ex]{\partial_\mu B_M^{A}  \partial_\nu B_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) }{B}{_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+		\bigg(-\imag g \int \ddx yA_\theta^{D'}(y) \partial_{y^\omega}}{B}
+	\partial_\mu B_M^{A}  \partial_\nu B_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\bigg(-\imag g \int \ddx yA_\theta^{D'}(y) \partial_{y^\omega} B_\kappa^{E'} (y) B_\lambda^{F'}(y) \bigg) v^{\theta\omega\kappa\lambda}_{D'E'F'}
+	\nl
+	+\contraction[4ex]{\partial_\mu }{B}{_M^{A}  \partial_\nu B_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+		\bigg(-\imag g \int \ddx yA_\theta^{D'}(y) \partial_{y^\omega} }{B}
+	\contraction[2ex]{\partial_\mu B_M^{A}  \partial_\nu }{B}{_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) }{B}
+	\contraction[3ex]{\partial_\mu B_M^{A}  \partial_\nu B_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha}}{B}{_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+		\bigg(-\imag g \int \ddx yA_\theta^{D'}(y) \partial_{y^\omega} B_\kappa^{E'} (y) }{B}
+	\partial_\mu B_M^{A}  \partial_\nu B_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\bigg(-\imag g \int \ddx yA_\theta^{D'}(y) \partial_{y^\omega} B_\kappa^{E'} (y) B_\lambda^{F'}(y) \bigg) v^{\theta\omega\kappa\lambda}_{D'E'F'}
+	\nl
+	+\contraction[4ex]{\partial_\mu }{B}{_M^{A}  \partial_\nu B_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+		\bigg(-\imag g \int \ddx yA_\theta^{D'}(y) \partial_{y^\omega} B_\omega^{E'} (y) }{B}
+	\contraction[2ex]{\partial_\mu B_M^{A}  \partial_\nu }{B}{_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) }{B}
+	\contraction[3ex]{\partial_\mu B_M^{A}  \partial_\nu B_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha}}{B}{_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+		\bigg(-\imag g \int \ddx yA_\theta^{D'}(y) \partial_{y^\omega}}{B}
+	\partial_\mu B_M^{A}  \partial_\nu B_N^D T^D_{AE} \bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+	\bigg(-\imag g \int \ddx yA_\theta^{D'}(y) \partial_{y^\omega} B_\kappa^{E'} (y) B_\lambda^{F'}(y) \bigg) v^{\theta\omega\kappa\lambda}_{D'E'F'}
+	\\
+	&=-\imag^2 \frac{C_A}{2}g^2 \int \ddx x \int \ddx y A^{A'}_\iota(x) A^{D'}_\theta(y) v^{\iota\alpha\beta\gamma}v^{\theta\omega\kappa\lambda}
+	\nl \bigg( \partial_\mu \partial_\omega \propagator_{M\kappa}(zn-y) \partial_\nu \partial_\alpha\propagator_{N\kappa}(\sigma n-x)\propagator_{\gamma\lambda}(x-y)
+	\nl
+	- \partial_\mu \propagator_{\lambda M}(zn-y) \partial_\nu \partial_\alpha\propagator_{N\beta}(\sigma n-x) \partial_\omega\propagator_{\gamma\kappa}(x-y)
+	\nl
+	-\partial_\mu\partial_\omega \propagator_{M\kappa}(zn-y) \partial_\nu \propagator_{N\gamma}(\sigma n -) \partial_\alpha \propagator_{\beta\lambda}(x-y)
+	\nl
+	+\partial_\mu \propagator_{M\lambda}(zn-y)\partial_\nu\propagator_{N\gamma}(\sigma n -x) \partial_\alpha\partial_\omega\propagator_{\beta \kappa} (x-y) \bigg)
+\end{align}
+nightmare continues.
+I have to CHECK whether the double derivative on propagator contributes with the additional term. I think not, that is why i ignore it. Check it(imperative)
+\begin{align}
+	&v^{\iota\alpha\beta\gamma}v^{\theta\omega\kappa\lambda}
+	\nl \bigg( \partial_\mu \partial_\omega \propagator_{M\kappa}(zn-y) \partial_\nu \partial_\alpha\propagator_{N\beta}(\sigma n-x)\propagator_{\gamma\lambda}(x-y)
+	\nl
+	- \partial_\mu \propagator_{\lambda M}(zn-y) \partial_\nu \partial_\alpha\propagator_{N\beta}(\sigma n-x) \partial_\omega\propagator_{\gamma\kappa}(x-y)
+	\nl
+	-\partial_\mu\partial_\omega \propagator_{M\kappa}(zn-y) \partial_\nu \propagator_{N\gamma}(\sigma n -) \partial_\alpha \propagator_{\beta\lambda}(x-y)
+	\nl
+	+\partial_\mu \propagator_{M\lambda}(zn-y)\partial_\nu\propagator_{N\gamma}(\sigma n -x) \partial_\alpha\partial_\omega\propagator_{\beta \kappa} (x-y) \bigg)
+	\\
+	&=
+	v^{\iota\alpha\beta\gamma}v^{\theta\omega\kappa\lambda}\frac{(-1)^3\Gamma^3\left(\frac{d}{2}-1\right)}{(4\pi^{\frac{d}{2}})^3}
+	\nl \bigg(\frac{4(zn-y)_\mu(y-zn)_\omega}{\left(-(zn-y)^2+\imag \epsilon\right)^{\frac{d}{2}+1}}\frac{4(\sigma n-x)_\nu(x-\sigma n)_\alpha}{\left(-(\sigma n-x)^2+\imag \epsilon\right)^{\frac{d}{2}+1}} \frac{\left(\frac{d}{2}\left(\frac{d}{2}-1\right)\right)^2\metric_{M\kappa}\metric_{N\beta}\metric_{\gamma\lambda}}{\left(-(x-y)^2+\imag \epsilon\right)^{\frac{d}{2}-1}}
+	\nl
+	- \frac{-2(zn-y)_\mu}{\left(-(zn-y)^2+\imag \epsilon\right)^{\frac{d}{2}}}\frac{4(\sigma n-x)_\nu(x-\sigma n)_\alpha}{\left(-(\sigma n-x)^2+\imag \epsilon\right)^{\frac{d}{2}+1}} \frac{-2(y-x)_\omega}{\left(-(x-y)^2+\imag \epsilon\right)^{\frac{d}{2}}}\frac{d}{2}\left(\frac{d}{2}-1\right)^3\metric_{M\lambda}\metric_{N\beta}\metric_{\gamma\kappa}
+	\nl
+	-\frac{4(zn-y)_\mu(y-zn)_\omega}{\left(-(zn-y)^2+\imag \epsilon\right)^{\frac{d}{2}+1}}\frac{-2(\sigma n-x)_\nu}{\left(-(\sigma n-x)^2+\imag \epsilon\right)^{\frac{d}{2}}} \frac{-2(x-y)_\alpha}{\left(-(x-y)^2+\imag \epsilon\right)^{\frac{d}{2}}}\frac{d}{2}\left(\frac{d}{2}-1\right)^3\metric_{M\kappa}\metric_{N\gamma}\metric_{\beta\lambda}
+	\nl
+	+\frac{-2(zn-y)_\mu}{\left(-(zn-y)^2+\imag \epsilon\right)^{\frac{d}{2}}}\frac{-2(\sigma n-x)_\nu}{\left(-(\sigma n-x)^2+\imag \epsilon\right)^{\frac{d}{2}}} \frac{4(y-x)_\omega(x-y)_\alpha}{\left(-(x-y)^2+\imag \epsilon\right)^{\frac{d}{2}+1}}\frac{d}{2}\left(\frac{d}{2}-1\right)^3\metric_{M\lambda}\metric_{N\gamma}\metric_{\beta\kappa}\bigg)
+\end{align}
+now 3 variables for integration $u_1,u_2,u_3$ maybe. As it was done already for the exercise.  
+introduce integration variables and the notations
+\begin{align}
+	\Lambda &= u_1u_2+u_2u_3+u_3u_1\\
+	\overline u_1 &= \frac{u_2u_3}{\Lambda}
+	\text{first shift:}&
+	\\
+	x&\rightarrow x + on + \overline w y
+\end{align}
+The values for the shifts should be looked up in Mathematica.
+FOLLOWING FORMULA NOT CORRECT
+\renewcommand{\dxabc}{\left[\dx u_1 \dx u_2 \dx u_3\right] }
+\begin{align}
+	&v^{\iota\alpha\beta\gamma}v^{\theta\omega\kappa\lambda}\frac{(-1)^3\Gamma\left(\frac{3d}{2}+1\right)}{(4\pi^{\frac{d}{2}})^3} \int \dxabc \frac{1}{\left(-K x ^2 -f(u{1-3},n,y)+\imag \epsilon\right)^{d+1}}16
+	\nl \bigg( -y_\mu (y-zn)_\omega -x_\nu (x-\sigma n)_\alpha \metric_{M\kappa}\metric_{N\beta}\metric_{\gamma\lambda}
+	\nl
+	- \frac{-2(zn-y)_\mu}{\left(-(zn-y)^2+\imag \epsilon\right)^{\frac{d}{2}}}\frac{4(\sigma n-x)_\nu(x-\sigma n)_\alpha}{\left(-(\sigma n-x)^2+\imag \epsilon\right)^{\frac{d}{2}+1}} \frac{-2(y-x)_\omega}{\left(-(x-y)^2+\imag \epsilon\right)^{\frac{d}{2}}}\frac{d}{2}\left(\frac{d}{2}-1\right)^3\metric_{M\lambda}\metric_{N\beta}\metric_{\gamma\kappa}
+	\nl
+	-\frac{4(zn-y)_\mu(y-zn)_\omega}{\left(-(zn-y)^2+\imag \epsilon\right)^{\frac{d}{2}+1}}\frac{-2(\sigma n-x)_\nu}{\left(-(\sigma n-x)^2+\imag \epsilon\right)^{\frac{d}{2}}} \frac{-2(x-y)_\alpha}{\left(-(x-y)^2+\imag \epsilon\right)^{\frac{d}{2}}}\frac{d}{2}\left(\frac{d}{2}-1\right)^3\metric_{M\kappa}\metric_{N\gamma}\metric_{\beta\lambda}
+	\nl
+	+\frac{-2(zn-y)_\mu}{\left(-(zn-y)^2+\imag \epsilon\right)^{\frac{d}{2}}}\frac{-2(\sigma n-x)_\nu}{\left(-(\sigma n-x)^2+\imag \epsilon\right)^{\frac{d}{2}}} \frac{4(y-x)_\omega(x-y)_\alpha}{\left(-(x-y)^2+\imag \epsilon\right)^{\frac{d}{2}+1}}\frac{d}{2}\left(\frac{d}{2}-1\right)^3\metric_{M\lambda}\metric_{N\gamma}\metric_{\beta\kappa}\bigg)
+\end{align}
 
 I denote the operator for twist 2 as the following object:
 
@@ -238,16 +337,16 @@ and then i re-represent the results
 		diagram&correction \\
 		$A$ & ${\displaystyle \frac{g^2C_A}{4\pi^{\frac{d}{2}}\epsilon}
 		\int_0^1 \dx u \frac{u}{\overline u}\left(\twtwoop{z_{21}^{u}}{z_2}{A}{\mu}{\nu}  - \twtwoop{z_1}{z_2}{A}{\mu}{\nu} \right)}$\verticaldistance \\
-		$A'$ & ${\displaystyle \frac{-g^2C_A}{8\pi^{\frac{d}{2}}\epsilon}\left(1-\ln\left(\frac{\imag \ppon{z_1}}{\delta}\right)\right)\twtwoop{z_1}{z_2}{A}{\mu}{\nu} }$\verticaldistance \\
+		$A'$ & ${\displaystyle \frac{-g^2C_A}{8\pi^{\frac{d}{2}}\epsilon}\left[\left(1-\ln\left(\frac{\imag \ppon{z_1}}{\delta}\right)\right)\twtwoop{z_1}{z_2}{A}{\mu}{\nu}  + \int_0^1 \dx u \frac{u}{\overline u} \left(\twtwoop{z_{21}^u}{z_2}{A}{\mu}{\nu}-\twtwoop{z_1}{z_2}{A}{\mu}{\nu}\right) \right]}$\verticaldistance \\
 		$B$ & ${\displaystyle \frac{g^2C_A}{8\pi^{\frac{d}{2}}\epsilon} \int _0^1 \dx u \frac{u}{\overline u} \left(\twtwoop{z_1}{z_{12}^u}{A}{\mu}{\nu} - \twtwoop{z_1}{z_2}{A}{\mu}{\nu} \right)}$ \verticaldistance \\
 		$B'$ & ${\displaystyle 	 \frac{-g^2C_A}{8\pi^{\frac{d}{2}}\epsilon}\left(1-\ln\left(\frac{\imag \ppon{z_2}}{\delta}\right)\right)\twtwoop{z_1}{z_2}{A}{\mu}{\nu}}$\verticaldistance \\
 		$A2$ & $-\frac{ g^2 C_A}{8\pi^2 \epsilon} \twtwoop{z_1}{z_2}{A}{\mu}{\nu} $  \verticaldistance \\
 		$B2$ & $-\frac{ g^2 C_A}{8\pi^2 \epsilon} \twtwoop{z_1}{z_2}{A}{\mu}{\nu} $\verticaldistance \\
 	\end{tabular}
-	\caption[caption]{gluon twist 2 \\\hspace{\textwidth}The correction is in one-loop.}
+	\caption[caption]{gluon twist 2 \\\hspace{\textwidth}The correction is in one-loop.with $z_1 =z$, $z_2 = \sigma$, $z_{ij}^w = z_i + w(z_j-z_i)$ (from first index to second index running along $w$) and $\ppon{x} $ denoting on which argument the momentum operator is acting.}
 	\label{Resultsgluontwist2table}
 \end{table}
-with $z_1 =z$, $z_2 = \sigma$, $z_{ij}^w = z_i + w(z_j-z_i)$ (from first index to second index running along $w$) and $\ppon{x} $ denoting on which argument the momentum operator is acting.
+
 
 Sum together should 
 
