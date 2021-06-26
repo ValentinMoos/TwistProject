@@ -1,0 +1,614 @@
+\ifdefined\mainprogram{}
+\else
+\include{head}
+\fi
+
+\section{Comments}
+Note that I use "good components", that is at some point in the computation I multiply (from the middle-direction of the operator) by $\gamma^+$, and by anticommuting find usually a term that is proportional to $\gamma^+$ and a term that drops. To my understanding i can do this since the full operator will contain a Gamma struncture inside that will contain this $\gamma^+$. This should only affect loop diagrams containing gamma structure (quark propagators).
+
+\section{gluon diagrams}
+
+Here i present the Diagrams for twist 2 with the intermediate computation performed in the Mathematica files.
+I will write the expressions for the diagrams, then isolte the results like it is done in Mathematica.
+The variables are
+$z1$=zn , $z2$=$\sigma n $, $z3=\tau n$ (integrate over)
+Note that the propagator symbol here usually is only the "one over distance squared" term, like in Mathematica, no factor of pi, 4 or Gamma included.
+\subsubsection{Diagram A}
+\begin{align}
+&\int_{z_2}^{z_1}\dx z_3\ft_{\mu +}^{A}(z_1)\imag g B_+^B(z3)  T^B_{AC}\ft _{\nu N}^D T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+\end{align}
+
+The common "prefactor" is
+\begin{align}
+	\int_{z2}^{z1} \dx z3 \int \ddx x A_\iota^{A'}(x) (- \imag ^2) \frac{\Gamma^2\left(\frac{d}{2}-1\right)}{(4\pi^2)^2}
+\end{align}
+The two contrations are
+\begin{align}
+	&\partial_{z1^{\mu}}\partial_{x^{\alpha}}\propagator_{M\beta}(z_1 -x )\propagator_{+\gamma}(z_3 -x )
+	\nl
+	+\partial_{z1^{\mu}}\propagator_{M\gamma}(z_1 -x )\partial_{x^{\alpha}}\propagator_{+\beta}(z_3 -x )
+\end{align}
+
+The color factor is: all structure function structure, $f$ and $T$ with the $\delta$-s coming from propagators computed
+The color factor is( the notation +1-1 indicates the first contraction is + the second is -, it does NOT mean the color factor is zero!):
+\begin{align}
+	i T^{D}_{A'E}C_A(+1-1)
+\end{align}
+Plug this into mathematica.
+Output: (be aware that now $z_i$ is only $z$, $\sigma$ and $\tau$ without $n$ )
+prefactor
+\begin{align}
+	\frac{g^2}{8 \pi^2 \epsilon} \ft_{\nu +}^D T^D_{A'E}
+\end{align}
+integral term
+\begin{align}
+	&\int_0^1 \dx u \int_{z_3 -z_2}^{0} \dx z_3 u \partial_+ \ft_{\mu +}(z_1 n + \overline u z_3 n)
+	\\
+	&=\int_0^1 \dx u \frac{u}{\overline u} \left(\ft_{\mu +}^{A'}(z_1 n) -\ft_{\mu +}^{A'}(z_2n + u(z_1-z_2) n) \right)
+\end{align}
+
+\subsubsection{Diagram A'}
+\begin{align}
+&\int_{-\infty}^{z_2}\dx z_3\ft_{\mu +}^{A}(z_1)\ft _{\nu N}^D(z_2) T^D_{AC}\imag g B_+^B(z3)  T^B_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+\end{align}
+
+The common "prefactor" is
+\begin{align}
+\int_{z2}^{z1} \dx z3 \int \ddx x A_\iota^{A'}(x) (- \imag ^2) \frac{\Gamma^2\left(\frac{d}{2}-1\right)}{(4\pi^2)^2}
+\end{align}
+The two contrations are
+\begin{align}
+&\partial_{z1^{\mu}}\partial_{x^{\alpha}}\propagator_{M\beta}(z_1 -x )\propagator_{+\gamma}(z_3 -x )
+\nl
++\partial_{z1^{\mu}}\propagator_{M\gamma}(z_1 -x )\partial_{x^{\alpha}}\propagator_{+\beta}(z_3 -x )
+\end{align}
+
+The color factor is:
+\begin{align}
+i T^{D}_{A'E}\frac{C_A}{2}(+1-1)
+\end{align}
+Plug this into mathematica.
+Output: (be aware that now $z_i$ is only $z$, $\sigma$ and $\tau$ without $n$ )
+prefactor
+\begin{align}
+\frac{g^2}{16 \pi^2 \epsilon} \ft_{\nu +}^D T^D_{A'E}
+\end{align}
+integral term
+\begin{align}
+&\int_0^1 \dx u \int_{-\infty}^{z_3 -z_2} \dx z_3 u \partial_+ \ft_{\mu +}(z_1 n + \overline u z_3 n)
+\\
+&=\left(1- \ln\left(\frac{\imag \pphat}{\delta}\right)\right)\ft_{\mu +}^{A'}(z_1n)+\int_0^1 \dx u \frac{u}{\overline u} \left(\ft_{\mu +}^{A'}(z_1 n+\overline u (z_2-z_1)n) -\ft_{\mu +}^{A'}(z_1 n) \right)
+\end{align}
+
+\subsubsection{Diagram B}
+\begin{align}
+&\int_{z_2}^{z_1}\dx z_3\ft_{\mu +}^{A}(z_1)\imag g B_+^B(z3)  T^B_{AC}\ft _{\nu N}^D(z_2) T^D_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+\end{align}
+
+The common "prefactor" is
+\begin{align}
+\int_{z2}^{z1} \dx z3 \int \ddx x A_\iota^{A'}(x) (- \imag ^2) \frac{\Gamma^2\left(\frac{d}{2}-1\right)}{(4\pi^2)^2}
+\end{align}
+The two contrations are
+\begin{align}
+&\partial_{z2^{\mu}}\partial_{x^{\alpha}}\propagator_{M\beta}(z_2 -x )\propagator_{+\gamma}(z_3 -x )
+\nl
++\partial_{z2^{\mu}}\propagator_{M\gamma}(z_2 -x )\partial_{x^{\alpha}}\propagator_{+\beta}(z_3 -x )
+\end{align}
+
+The color factor is:
+\begin{align}
+i T^{A'}_{AE}\frac{C_A}{2}(+1-1)
+\end{align}
+Plug this into mathematica.
+Output: (be aware that now $z_i$ is only $z$, $\sigma$ and $\tau$ without $n$ )
+prefactor
+\begin{align}
+\frac{g^2}{16 \pi^2 \epsilon} \ft_{\mu +}^A T^{A'}_{AE}
+\end{align}
+integral term
+\begin{align}
+&\int_0^1 \dx u \int_{z_1 -z_2}^{0} \dx z_3 u \partial_+ \ft_{\nu +}(z_2 n + \overline u z_3 n)
+\\
+&=\int_0^1 \dx u \frac{u}{\overline u} \left(\ft_{\nu +}^{A'}(z_2n+\overline u(z_1-z_2)n)-\ft_{\nu +}^{A'}(z_2n)\right)
+\end{align}
+
+\subsubsection{Diagram B'}
+\begin{align}
+&\int_{-\infty}^{z_2}\dx z_3\ft_{\mu +}^{A}(z_1)\ft _{\nu N}^D(z_2) T^D_{AC}\imag g B_+^B(z3)  T^B_{CE}\bigg(-\imag g \int \ddx xA_\iota^{A'}(x) \partial_{x^\alpha} B_\beta^{B'} (x) B_\gamma^{C'}(x) \bigg) v^{\iota \alpha\beta\gamma}_{A'B'C'}
+\end{align}
+
+The common "prefactor" is
+\begin{align}
+\int_{z2}^{z1} \dx z3 \int \ddx x A_\iota^{A'}(x) (- \imag ^2) \frac{\Gamma^2\left(\frac{d}{2}-1\right)}{(4\pi^2)^2}
+\end{align}
+The two contrations are
+\begin{align}
+&\partial_{z_2^{\mu}}\partial_{x^{\alpha}}\propagator_{M\beta}(z_2 -x )\propagator_{+\gamma}(z_3 -x )
+\nl
++\partial_{z_A2^{\mu}}\propagator_{M\gamma}(z_2 -x )\partial_{x^{\alpha}}\propagator_{+\beta}(z_3 -x )
+\end{align}
+
+The color factor is:
+\begin{align}
+i T^{A'}_{AE}\frac{C_A}{2}(+1-1)
+\end{align}
+Plug this into mathematica.
+Output: (be aware that now $z_i$ is only $z$, $\sigma$ and $\tau$ without $n$ )
+prefactor
+\begin{align}
+\frac{g^2}{16 \pi^2 \epsilon} \ft_{\mu +}^A T^{A'}_{AE}
+\end{align}
+integral term
+\begin{align}
+&\int_0^1 \dx u \int_{-\infty}^{0} \dx z_3 u \partial_+ \ft_{\nu +}(z_2 n + \overline u z_3 n)
+\\
+&=\left(1- \ln\left(\frac{\imag \pphat}{\delta}\right)\right)\ft_{\nu +}^{A'}(z_2n)
+\end{align}
+
+\section{quark Twist 2}
+
+\subsection{Diagram D}
+\begin{align}
+\int_{z_2}^{z_1} \dx z_3 \qbar^A(z_1) \imag g B_+^Z T^Z_{AC} \ft_{\mu +}^D(z_2) T^D_{CE}(-\imag g \int \ddx x A^{A'}_\iota \partial_\alpha B_\beta^{B'}D_\gamma^{C'})v^{\iota\alpha\beta\gamma}_{A'B'C'}
+\end{align}
+common prefactor:
+\begin{align}
+\int_{z_2}^{z_1} \dx z_3  \int \ddx x \qbar(z_1) A^{A'}_\iota(x)(-\imag^2)\frac{\Gamma^2(\frac{d}{2}-1)}{\left(4\pi^2\right)^{2}}
+\end{align}
+Two contractions:
+\begin{align}
+	&\partial_{x^\alpha} \partial_{z_1^\mu} \propagator_{M\beta}(z_2 -x) \propagator_{\gamma +}(z_3-x)
+	\nl
+	+\partial_{z_1^\mu} \propagator_{M\gamma}(z_2 -x) \partial_{x^\alpha}\propagator_{\beta +}(z_3-x)
+\end{align}
+Color factor
+\begin{align}
+	-\imag \frac{C_F}{2} T^{A'}_{AD}
+\end{align}
+Output:
+prefactor:
+\begin{align}
+	-\frac{C_F g^2}{16 \pi^2 \epsilon}\qbar(z_1n)^A T^{A'}_{AD}
+\end{align}
+integral term
+\begin{align}
+	&\int_0^1 \dx u \int_0^{z_1-z_2} \dx z_3 u \partial_+ \ft_{\mu +}^{A'} 
+	\\
+	&=\int _0^1 \dx u \frac{u}{\overline u} \left(\ft_{\mu +}^{A'}(z_1n+u(z_2-z_1)n)-\ft_{\mu +}^{A'}(z_2n)\right) 
+\end{align}
+
+
+
+\subsection{Diagram H}
+\begin{align}
+\int_{z_2}^{z_1} \dx z_3 \qbar^A(z_1) \ft_{\mu +}^D(z_2) T^D_{AC}\imag g B_+^Z T^Z_{CE} (-\imag g \int \ddx x A^{A'}_\iota \partial_\alpha B_\beta^{B'}D_\gamma^{C'})v^{\iota\alpha\beta\gamma}_{A'B'C'}
+\end{align}
+common prefactor:
+\begin{align}
+\int_{-\infty}^{z_2} \dx z_3  \int \ddx x \qbar(z_1) A^{A'}_\iota(x)(-\imag^2)\frac{\Gamma^2(\frac{d}{2}-1)}{\left(4\pi^2\right)^{2}}
+\end{align}
+Two contractions:
+\begin{align}
+&\partial_{x^\alpha} \partial_{z_1^\mu} \propagator_{M\beta}(z_2 -x) \propagator_{\gamma +}(z_3-x)
+\nl
++\partial_{z_1^\mu} \propagator_{M\gamma}(z_2 -x) \partial_{x^\alpha}\propagator_{\beta +}(z_3-x)
+\end{align}
+Color factor
+\begin{align}
++\imag \frac{C_F}{2} T^{A'}_{AD}
+\end{align}
+Output:
+prefactor:
+\begin{align}
+\frac{C_F g^2}{16 \pi^2 \epsilon}\qbar(z_1n)^A T^{A'}_{AD}
+\end{align}
+integral term
+\begin{align}
+&\int_0^1 \dx u \int_{-\infty}^{0} \dx z_3 u \partial_+ \ft_{\mu +}^{A'} 
+\\
+&=\left(1-\ln\left(\frac{\imag \pphat(z_2)}{\delta}\right)\right)\ft_{\mu +}^{A'}(z_2) 
+\end{align}
+
+
+
+\subsection{Diagram E}
+Note that in the quark propagator there is hidden a factor if $\imag$!
+\begin{align}
+\int_{z_2}^{z_1} \dx z_3 \qbar^A(z_1) \imag g B_+^B T^B_{AC} \ft_{\mu +}^D(z_2) T^D_{CE} (+\imag g \int \ddx x \qbar^X \gamma^\nu B_\nu^Z T^Z_{XY} q^Y)
+\end{align}
+common prefactor:
+\begin{align}
+\int_{z_2}^{z_1} \dx z_3  \int \ddx x \imag ^3 g^2  \frac{\Gamma^(\frac{d}{2})\Gamma^(\frac{d}{2}-1)}{8\pi^4}\ft_{\mu +}^D
+\end{align}
+One contraction:
+\begin{align}
+&\qprop(z_1 -x) \propagator_{\nu +}(z_3-x)
+\end{align}
+Color factor
+\begin{align}
+\frac{C_F} T^{D}_{XE}
+\end{align}
+Output:
+prefactor:
+\begin{align}
+-\frac{ C_F g^2}{8 \pi^2 \epsilon}\ft_{\mu +}^D(z_2n) T^{D}_{ZE}
+\end{align}
+integral term
+\begin{align}
+&\int_0^1 \dx u \int_{0}^{z_1-z_2} \dx z_3 u \partial_+ \qbar^Z(z_1+\overline u z_3) 
+\\
+&=\int_0^1 \dx u \frac{u}{\overline u}\left(\qbar^Z((z_2+u(z_1-z_2))n)-\qbar^Z(z_1n)\right) 
+\end{align}
+
+
+\subsection{Diagram G}
+Note that in the quark propagator there is hidden a factor if $\imag$!
+\begin{align}
+\int_{-\infty}^{z_2} \dx z_3 \qbar^A(z_1) \ft_{\mu +}^D(z_2) T^D_{AC} \imag g B_+^B T^B_{CE}  (+\imag g \int \ddx x \qbar^X \gamma^\nu B_\nu^Z T^Z_{XY} q^Y)
+\end{align}
+common prefactor:
+\begin{align}
+\int_{z_2}^{z_1} \dx z_3  \int \ddx x \imag ^3 g^2  \frac{\Gamma^(\frac{d}{2})\Gamma^(\frac{d}{2}-1)}{8\pi^4}\ft_{\mu +}^D
+\end{align}
+One contraction:
+\begin{align}
+&\qprop(z_1 -x) \propagator_{\nu +}(z_3-x)
+\end{align}
+Color factor
+\begin{align}
+\frac{C_F}{2} T^{D}_{XE}
+\end{align}
+Output:
+prefactor:
+\begin{align}
+-\frac{ C_F g^2}{16 \pi^2 \epsilon}\ft_{\mu +}^D(z_2n) T^{D}_{ZE}
+\end{align}
+integral term
+\begin{align}
+&\int_0^1 \dx u \int_{-\infty}^{z_2-z_1} \dx z_3 u \partial_+ \qbar^Z(z_1+\overline u z_3) 
+\\
+&=\int_0^1 \dx \frac{u}{\overline u} \left(\qbar^Z((z_2+u(z_1-z_2))n)-\qbar^Z(z_1n)\right)
+\nl
++\left(1-\ln\left(\frac{\imag \pphat(z_1)}{\delta}\right)\right)\qbar^Z(z_1n)
+\end{align}
+
+\subsection{Diagram F}
+\begin{align}
+\qbar^A(z_1) f^{DXY} B_\mu^X(z_2)B_+^Y(z_2) T^D_{AC}  (-\imag g \int \ddx x A^{A'}_\iota \partial_\alpha B_\beta^{B'}D_\gamma^{C'})v^{\iota\alpha\beta\gamma}_{A'B'C'}
+\end{align}
+common prefactor:
+\begin{align}
+\int \ddx x -\imag g^2  \frac{\Gamma^2(\frac{d}{2}-1)}{16\pi^4}\qbar^A(z_1)
+\end{align}
+contractions:
+\begin{align}
+&\partial_{x^\alpha}\propagator_{\mu \beta}(z_2-x)\propagator_{\gamma +}(z_2-x)
+\nl 
++\propagator_{\mu \gamma}(z_2-x)\partial_{x^\alpha}\propagator_{\beta +}(z_2-x)
+\end{align}
+Color factor
+\begin{align}
+{C_F} T^{A'}_{AC}
+\end{align}
+Output:
+prefactor:
+\begin{align}
+-\frac{ C_F g^2}{4 \pi^2 \epsilon}\qbar^A(z_1) T^{A'}_{AE}
+\end{align}
+integral term( here the integral over u is trivial and gives factor $\frac12$)
+\begin{align}
+\ft_{\mu +}^{A'}(z_2n)
+\end{align}
+
+\subsection{Diagram C}
+\begin{align}
+\qbar^A(z_1) g f^{DLK} B_\mu^L(z_2)B_+^K(z_2) T^D_{AE}   (+\imag g \int \ddx x \qbar^X \gamma^\nu B_\nu^Z T^Z_{XY} q^Y)
+\end{align}
+common prefactor:
+\begin{align}
+\int \ddx x \imag g^2  \frac{\Gamma(\frac{d}{2}-1)\Gamma(\frac{d}{2})}{8\pi^4}\qbar^X(x)
+\end{align}
+contractions:( i could drop the second one from the start)
+\begin{align}
+&\qprop(z_1-x)\propagator_{\nu +}(z_2-x)A_\mu^L(z_2)\gamma^\nu
+\nl 
++\qprop(z_1-x)\propagator_{\nu \mu}(z_2-x)A_+^L(z_2)\gamma^\nu
+\end{align}
+Color factor
+\begin{align}
+\frac{C_F}{2} T^{L}_{XE}(+1-1)
+\end{align}
+Output:
+prefactor:
+\begin{align}
+-\frac{ C_F g^2}{16 \pi^2 \epsilon}
+\end{align}
+integral term
+\begin{align}
+\int_0^1 \dx u& u \qbar^X(uz_1n+\overline u z_2n) \ppl A_\mu ^L(z_2 n)T^L_{XE}
+\\
+&=\int _0^1 \dx u (z_1-z_2)^{-1}\padif{u}\qbar(z_{2\rightarrow1}^un)A_\mu(z_2n)
+\\
+&=
+(z_1-z_2)^{-1}\left(-\int _0^1 \dx \qbar(z_{2\rightarrow1}^un) +\qbar(z_1n)\right)A_\mu(z_2n)
+\\
+&=
+(z_1-z_2)^{-1}\int _{-\infty}^{z_2} \dx \beta \left(\int _0^1 \dx \qbar(z_{2\rightarrow1}^un) -\qbar(z_1n)\right)\ft_{\mu+}(\beta n)
+\end{align}
+
+
+\subsection{Diagram K}
+\begin{align}
+\qbar^A(z_1) \ft_{\mu +}^D(z_2) T^D_{AE}   (+\imag g \int \ddx x \qbar^X \gamma^\nu B_\nu^Z T^Z_{XY} q^Y)
+\end{align}
+common prefactor:
+\begin{align}
+\int \ddx x \imag g \frac{\Gamma(\frac{d}{2}-1)\Gamma(\frac{d}{2})}{8\pi^4}\qbar^X(x)
+\end{align}
+\begin{align}
+\qprop(z_1-x)\partial_{z_1^\mu}\propagator_{\nu M}(z_2-x)\gamma^\nu
+\end{align}
+Color factor
+\begin{align}
+	C_F T^{L}_{XC}
+\end{align}
+Output:
+prefactor:
+\begin{align}
+\frac{- \imag  C_F g}{32 \pi^2 \epsilon}
+\end{align}
+integral term
+\begin{align}
+\int_0^1 \dx u u \overline u \qbar^C(uz_1n+\overline u z_2n)\slashed \partial \partial_+ \gamma^\mu 
+\end{align}
+Further evolution:
+\begin{align}
+\int_0^1 \dx u u \overline u \qbar^C(uz_1n+\overline u z_2n)\slashed \partial \partial_+ \gamma^\mu
+\\
+&=
+- \int_0^1 \dx u (1-2u) \qbar^C(uz_1n+\overline u z_2n)\slashed \partial  \gamma^\mu
+\\
+&=
+\imag g  \int_0^1 \dx u (1-2u) \qbar^C(uz_1n+\overline u z_2n)\slashed A(uz_1n+\overline u z_2n)  \gamma^\mu
+\\
+&=
+\imag g  \int_0^1 \dx u (1-2u) \qbar^C(uz_1n+\overline u z_2n)\int_{-\infty}^{uz_1+\overline u z_2} \dx \beta \ft_{+\nu}(\beta n) \gamma^\nu \gamma^\mu
+\\
+&=
+- \imag g  \int_0^1 \dx u (1-2u) \qbar^C(uz_1n+\overline u z_2n)\left( \int_{-\infty}^{z_2} + \int_{z_2}^{uz_1+\overline u z_2} \right) \dx \beta \ft_{\nu +}(\beta n) \gamma^\nu \gamma^\mu
+\end{align}
+
+\subsection{Diagram B}
+\begin{align}
+\qbar^A(z_1) \ft_{\mu +}^D(z_2) T^D_{AC}   (+\imag g \int \ddx x \qbar^X \gamma^\nu B_\nu^Z T^Z_{XY} q^Y)(+\imag g \int \ddx y \qbar^O \gamma^\nu B_\nu^P T^P_{OV} q^V)
+\end{align}
+common prefactor:
+\begin{align}
+\int \ddx x \int \ddx y \imag^2 g^2 \frac{\Gamma(\frac{d}{2}-1)\Gamma^2(\frac{d}{2})}{16\pi^6}
+\end{align}
+\begin{align}
+(1)=&\qprop(z_1-x)\partial_{z_1^\mu}\propagator_{\eta M}(z_2-y)\qprop(x-y)\qbar^O(y)\gamma^\eta \gamma^\nu
+\\
+(2)=&\qprop(z_1-y)\partial_{z_1^\mu}\propagator_{\nu M}(z_2-x)\qprop(y-x)\qbar^X(x)\gamma^\nu\gamma^\eta 
+\end{align}
+Color factor
+\begin{align}
+(1)&=\frac{C_F}{2} T^{Z}_{OC}
+\\
+(2)&=\frac{C_F}{2} T^{P}_{XC}
+\end{align}
+Output:
+prefactor(blue factor 2 is symmetry factor):
+\begin{align}
+{\color{blue}2}\frac{ - C_F g^2 \Gamma(-\epsilon)}{32 \pi^2} &=\frac{ C_F \as}{\epsilon}
+\end{align}
+integral term
+\begin{align}
+\int \dxabc &\frac{\alpha \beta \gamma}{\left(\alpha \beta + \beta \gamma + \gamma \alpha\right)^5} \qbar^O(\frac{z_1 \gamma\alpha +z_2 \beta (\gamma + \alpha)}{\alpha \beta + \beta \gamma + \gamma \alpha}n)T^{Z}_{OC}
+\nl
+\bigg\{ (z_1-z_2)\alpha \beta\gamma (\beta + \gamma) \gamma^\mu \gamma^\nu \ppr^2 
++ (z_1-z_2)\alpha\beta\gamma (\alpha + \gamma) \gamma^\mu \gamma^\nu \ppl^2 
+\nl
++(\beta \gamma + \alpha (\beta +\gamma) )((\alpha(\beta-2\gamma)+\beta\gamma)\gamma^\mu \gamma^\nu -\alpha \gamma \gamma^\nu \gamma^\mu)\ppl 
+\nl
++ (z_1-z_2)\alpha\beta(\alpha(\beta+\gamma)+\gamma(\beta+2\gamma))\gamma^\mu \gamma^\nu \ppl \ppr
+\nl
+-(\beta\gamma + \alpha (\beta +\gamma))( (-\beta\gamma+2\alpha (\beta+\gamma))\gamma^\mu \gamma^\nu  - \beta \gamma \gamma^\nu \gamma^\mu )\ppr
+	 \bigg\}A^Z_\nu (\frac{z_1(\gamma +\beta)\alpha+z_2\gamma \beta}{\alpha \beta + \beta \gamma + \gamma \alpha}) 
+\\
+&=
+\int \dxabc \frac{\alpha \beta \gamma \Lambda^2}{\Lambda^5} \qbar^O(z_{21}^{\beta ' }n)T^{Z}_{OC}
+\nl
+\bigg\{ (z_1-z_2)\ap \apbar \gamma^\mu \gamma^\nu \ppr^2 
++ (z_1-z_2)\beta' \overline{\beta '} \gamma^\mu \gamma^\nu \ppl^2 
+\nl
++(1-3\beta')\gamma^\mu \gamma^\nu -\beta' \gamma^\nu \gamma^\mu \ppl 
+\nl
++ (z_1-z_2)(\gamma' +2\beta'\alpha')\gamma^\mu \gamma^\nu \ppl \ppr
+\nl
++(3\alpha'-2)\gamma^\mu \gamma^\nu  + \alpha' \gamma^\nu \gamma^\mu \ppr
+\bigg\}A^Z_\nu (z_{12}^{\alpha'}) 
+\end{align}
+with
+\begin{align}
+	z_{ij}^u
+	&=
+	z_i+u(z_j-z_i)
+\end{align}
+"from $i$ to $j$ along variable $u$"
+
+change to primed variables:
+\begin{align}
+	(\alpha',\beta',\gamma') \rightarrow (\beta,\alpha,\gamma) 
+\end{align}
+prefactor
+\begin{align}
+\frac{ C_F \as}{\epsilon}
+\end{align}
+
+integral term
+\begin{align}
+\int \dxabc & \qbar^O(z_{21}^{\alpha  }n)T^{Z}_{OC}
+\bigg\{ (z_1-z_2)\beta \overline{\beta} \gamma^\mu \gamma^\nu \ppr^2 
++ (z_1-z_2)\alpha \overline{\alpha} \gamma^\mu \gamma^\nu \ppl^2 
+\nl
++\left((1-3\alpha)\gamma^\mu \gamma^\nu -\alpha \gamma^\nu \gamma^\mu \right)\ppl 
++ (z_1-z_2)(\gamma +2\alpha\beta)\gamma^\mu \gamma^\nu \ppl \ppr
+\nl
++\left((3\beta-2)\gamma^\mu \gamma^\nu  + \beta \gamma^\nu \gamma^\mu \right)\ppr
+\bigg\}A^Z_\nu (z_{12}^{\beta}) 
+\end{align}
+useful:
+\begin{align}
+	\partial_+ f(z_{ij}^\lambda n) &= -(z_i-z_j)^{-1}\partial_\lambda f(z_{ij}^\lambda n)
+	\\
+	A_\alpha(z_{ij}^\lambda n) &= (z_i-z_j)\int_\Pi^\lambda \dx \sigma \ft_{\alpha +}(z_{ij}^\sigma n)
+	\\
+	x
+\end{align}
+$\Pi$ would be a $\Pi$oint of reference, usually $\pm \infty$
+refine the result term by term:
+\begin{align}
+	\int \dxabc (z_1-z_2)\beta \overline{\beta} \ppr^2 A^Z_\nu (z_{12}^{\beta}) 
+	&=
+	\int \dxabc (1-2\beta) \ft^Z_{\nu+ } (z_{12}^{\beta})
+	\\
+	\int\dxabc \qbar(z_{21}^\alpha n) \ppl^2 \alpha \overline{\alpha}(z_1-z_2)A_\nu(z_{12}^\beta)
+	&=
+	\int\dxabc  \left( 2\qbar(z_{21}^\alpha n) - \qbar(z_1n) -\qbar(z_2n) \right) \int_\Pi^\beta  \ft_{\nu+} (z_{12}^\sigma n)
+	\\
+	\int\dxabc \qbar(z_{21}^\alpha n) \ppl (-\alpha) A_\nu(z_{12}^\beta)
+	&=
+	\int\dxabc  \left(\qbar(z_1n) - \qbar(z_{21}^\alpha n)  \right) \int_\Pi^\beta  \ft_{\nu+} (z_{12}^\sigma n)
+	\\
+	\int\dxabc \qbar(z_{21}^\alpha n) \ppl (1-3\alpha) A_\nu(z_{12}^\beta)
+	&=
+	\int\dxabc  \left(\qbar(z_2n)+2\qbar(z_1n) - 3 \qbar(z_{21}^\alpha n)  \right) \int_\Pi^\beta  \ft_{\nu+} (z_{12}^\sigma n)
+	\\
+	\int\dxabc \qbar(z_{21}^\alpha n) \ppl (z_1-z_2) (1-\alpha-\beta +2 \alpha\beta)
+	&=
+	\int\dxabc  \left(-\qbar(z_2n)\overline{\beta}+ \qbar(z_1n) \beta  - \qbar(z_{21}^\alpha n)(2\beta-1)  \right)
+\end{align}
+the other terms are already in good form by derivative acting on gluon field.
+resumming
+\begin{align}
+	B&= \int \dxabc \bigg\{ \gamma_\mu \gamma^\nu \big[
+	(1-2\beta)
+	\big] \bigg\}
+\end{align}
+\subsection{Diagram A}
+\begin{align}
+\qbar^A(z_1) \ft_{\mu +}^D(z_2) T^D_{AC}   (+\imag g \int \ddx x \qbar^X \gamma^\nu B_\nu^Z T^Z_{XY} q^Y)(-\imag g \int \ddx y A^{A'}_\iota \partial_\alpha B_\beta^{B'}D_\gamma^{C'})v^{\iota\alpha\beta\gamma}_{A'B'C'}
+\end{align}
+common prefactor:
+\begin{align}
+\int \ddx x \int \ddx y -\imag^2 g^2 \frac{\Gamma^2(\frac{d}{2}-1)\Gamma(\frac{d}{2})}{32\pi^6} \qbar^X(x)\gamma^\theta A_\iota^{A'}(y)
+\end{align}
+\begin{align}
+&\qprop(z_1-x)\partial_{y^\alpha}\partial_{z_2^\mu}\propagator_{\beta M}(z_2-y)\propagator_{\theta \gamma}(x-y)
+\nl
++\qprop(z_1-x)\partial_{z_2^\mu}\propagator_{\gamma M}(z_2-y)\partial_{y^\alpha}\propagator_{\theta \beta}(x-y) 
+\end{align}
+Color factor
+\begin{align}
+-\imag\frac{C_F}{2} T^{A'}_{XZ}(1-1)
+\end{align}
+Output(main term from main computation, there is an additional term right below):
+prefactor:
+\begin{align}
+\frac{g^2 C_F\Gamma(-\epsilon)}{32\pi^2}&=-\frac{C_F\as}{2\epsilon} 
+\end{align}
+integral term
+\begin{align}
+\int \dxabc& \frac{\alpha \beta \gamma}{\Lambda^3}\qbar^X(z_{12}^{\alpha'})\bigg\{ \bigg[ \big(-\frac{\beta(\alpha+\gamma)}{\Lambda } \ppl - \frac{\beta\gamma}{\Lambda} \ppr \big) \gamma_\mu \gamma^\nu +  \ppl \gamma^\nu \gamma_\mu\bigg] 
+\nl
++ \bigg[  \frac{3\beta\gamma +\alpha(3\beta +\gamma)}{\Lambda} \ppl + \frac{(\beta+\gamma)(3\beta\gamma +\alpha(3\beta+\gamma))}{\gamma \Lambda} \ppr \bigg] \metric _{\mu}^\nu\bigg\} A_\nu^{A'}(z_{21}^{\beta'})
+\\
+&=
+\int \dxabc \frac{\alpha \beta \gamma}{\Lambda^3}\qbar^X(z_{12}^{\alpha'})\bigg\{ \bigg[ \big(-\overline{\beta'} \ppl - \alpha' \ppr \big) \gamma_\mu \gamma^\nu +  \ppl \gamma^\nu \gamma_\mu\bigg] 
+\nl
++ \bigg[  (3\overline{\beta'} + \beta') \ppl + \frac{(\beta+\gamma)(3\beta\gamma +\alpha(3\beta+\gamma))}{\gamma \Lambda} \ppr \bigg] \metric _{\mu}^\nu\bigg\} A_\nu^{A'}(z_{21}^{\beta'})
+\\
+&=
+\int \dxabc \qbar^X(z_{12}^{\beta})\bigg\{ \bigg[ \big(-\overline{\alpha} \ppl - \beta \ppr \big) \gamma_\mu \gamma^\nu +  \ppl \gamma^\nu \gamma_\mu\bigg] 
+\nl
++ \bigg[  (3\overline{\alpha} + \alpha) \ppl + X_{undefined} \ppr \bigg] \metric _{\mu}^\nu\bigg\} A_\nu^{A'}(z_{21}^{\alpha})
+\end{align}
+Then here is a bonus term, which can not be neglected. It is $\propto \metric^{\mu \alpha}$ (inside the computations first steps). The contribution is
+prefactor:
+\begin{align}
+	\frac{g^2C_F\Gamma(-\epsilon)}{32 \pi^2}T^{A'}_{XC} &= 
+	\frac{-\as C_F}{2\epsilon}T^{A'}_{XC}
+\end{align}	
+integral term
+\begin{align}
+	\int \dxabc \qbar^X(z_{12}^{\alpha'})\frac{-3\alpha \beta}{(\alpha+\gamma)\Lambda^2}\ppr  A_\mu^{A'}(z_{21}^{\beta'})
+\end{align}
+
+we can use the Anticommutator to rewrite the metric tensor:
+\begin{align}
+	\metric^{\vartheta\eta} &= \frac{1}{2}\left(\gamma^\vartheta \gamma^\eta + \gamma^\eta \gamma^\vartheta \right)
+\end{align}
+Thus in Total we have
+\begin{align}
+	A &=
+	\int\dxabc \qbar(z_{12}^\beta)\bigg\{ 
+	\gamma_\mu \gamma^\nu \big[
+	+\left(\frac{1}{2}\overline{\alpha}+\alpha\right)\ppl
+	+\left(-\beta+XY\right)\ppr
+	\big]
+	\nl
+	+\gamma^\nu \gamma_\mu \big[
+	\left( 1+\frac{3}{2}\overline{\alpha}+\frac{1}{2}\alpha \right)\ppl
+	+XY\ppr
+	\big]
+	\bigg\}A_\nu^{A'}(z_{21}^{\alpha})
+\end{align}
+\section{Identities}
+For color factor computations:
+\begin{align}
+	f^{ade}f^{bcd}+f^{bde}f^{cad}+f^{cde}f^{abd} &= 0
+	\\
+	f^{heb}(f^{ade}f^{bcd}+f^{bde}f^{cad}+f^{cde}f^{abd}) &= 0
+	\\
+	f^{ade}f^{heb}f^{bcd}+f^{bde}f^{heb}f^{cad}+f^{cde}f^{heb}f^{abd} &= 0
+	\\
+	f^{ade}f^{heb}f^{bcd}+f^{bde}f^{heb}f^{cad}+f^{cde}f^{heb}f^{abd} &= 0
+	\\
+	-f^{ade}f^{heb}f^{cbd}+f^{deb}f^{heb}f^{cad}-f^{adb}f^{hbe}f^{ced} &= 0
+	\\
+	-2f^{ade}f^{heb}f^{cbd}+C_G\delta_{dh}f^{cad} &= 0
+	\\
+	f^{ade}f^{heb}f^{cbd} &= \frac{C_G}{2}f^{ahc}
+\end{align}
+
+for 3 integration variables: There exists the following transformation
+\begin{align}
+	(\alpha, \beta, \gamma) \rightarrow (\alpha',\beta',\gamma') = (\frac{\beta\gamma}{\Lambda},\frac{\gamma\alpha}{\Lambda},\frac{\alpha\beta}{\Lambda}), ~~\Lambda = \alpha \beta + \beta \gamma + \gamma \alpha
+\end{align}
+with the additional constraint 
+\begin{align}
+	\alpha + \beta +\gamma =1
+\end{align}
+it is indeed a two dimensional transformation.
+These variables arise naturally in the computation.
+To change the variables, the Jacobi Determinant is needed to use the Transformation theorem. It should be noted that also the transformed variables naturally fulfill the condition
+\begin{align}
+	\alpha' + \beta ' + \gamma ' = \frac{\beta \gamma + \gamma \alpha + \alpha \beta}{\Lambda} = 1
+\end{align}
+
+and preserve the domain for each variable:
+\begin{align}
+	\alpha, \beta, \gamma, \in [0,1] \rightarrow \alpha', \beta', \gamma', \in [0,1]
+\end{align}
+The Jacobian of this (two dimensional) transformation is
+
+\begin{align}
+	\abs{\det D\Phi} &= \frac{\alpha \beta \gamma }{\Lambda ^3} 
+\end{align}
+which is checked in Mathematica. I also checked this by hand and found the same.
+\ifdefined\mainprogram{}
+\else
+\include{end}
+\fi

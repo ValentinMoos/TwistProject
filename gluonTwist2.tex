@@ -60,9 +60,9 @@ The remaining term is
 	&\int_\sigma^z \dx \tau\int \ddx x  A_\iota^{A'}(x) \bigg( \partial_\mu \partial_\alpha \propagator_{M\beta}(zn-x) \propagator_{+\gamma} (\tau n - x) - \partial_\mu \propagator_{M\gamma}(zn-x) \partial_\alpha\propagator_{+\beta}(\tau n -x)\bigg)  v^{\iota \alpha\beta\gamma}
 	\\
 	&=
-	\int_\sigma^z \dx \tau\int \ddx x  A_\iota^{A'}(x) \frac{\Gamma^2\left(\frac{d}{-1}\right)}{4^2\pi^{d}}\bigg( \frac{4\left(\frac{d}{2}-1\right)\frac{d}{2}(x-zn)_\alpha (zn-x)_\mu}{\left(-(zn-x)^2+\imag \epsilon\right)^{\frac{d}{2}+1}}\frac{1}{\left(-(\tau n-x)^2+\imag \epsilon\right)^{\frac{d}{2}-1}}\metric_{M\beta}\metric_{+\gamma} 
+	\int_\sigma^z \dx \tau\int \ddx x  A_\iota^{A'}(x) \frac{\Gamma^2\left(\frac{d}{2}-1\right)}{4^2\pi^{d}}\bigg( \frac{4\left(\frac{d}{2}-1\right)\frac{d}{2}(x-zn)_\alpha (zn-x)_\mu}{\left(-(zn-x)^2+\imag \epsilon\right)^{\frac{d}{2}+1}}\frac{1}{\left(-(\tau n-x)^2+\imag \epsilon\right)^{\frac{d}{2}-1}}\metric_{M\beta}\metric_{+\gamma} 
 	\nl
-	- \frac{-2\left(\frac{d}{-1}\right)(zn-x)_\mu}{\left(-(zn-x)^2+\imag \epsilon\right)^{\frac{d}{2}}}\frac{-2\left(\frac{d}{-1}\right)(x- \tau n)_\alpha}{\left(-(\tau n-x)^2+\imag \epsilon\right)^{\frac{d}{2}}}\metric_{M\gamma}\metric_{+\beta}\bigg)  v^{\iota \alpha\beta\gamma}
+	- \frac{-2\left(\frac{d}{2}-1\right)(zn-x)_\mu}{\left(-(zn-x)^2+\imag \epsilon\right)^{\frac{d}{2}}}\frac{-2\left(\frac{d}{2}-1\right)(x- \tau n)_\alpha}{\left(-(\tau n-x)^2+\imag \epsilon\right)^{\frac{d}{2}}}\metric_{M\gamma}\metric_{+\beta}\bigg)  v^{\iota \alpha\beta\gamma}
 	\\
 	&=
 	\int^{0}_{\sigma-z} \dx \tau\int _0^1 \dx u u^{\frac{d}{2}-1} \overline u ^{\frac{d}{2}-2} \int \ddx x  A_\iota^{A'}(x) \frac{4\Gamma(d)}{4^2\pi^{d}}\bigg( \frac{u(x+ \overline u \tau n)_\alpha-x_\mu}{\left(-x^2+\imag \epsilon\right)^{d}}\metric_{M\beta}\metric_{+\gamma} 
@@ -77,17 +77,17 @@ The remaining term is
 	\bigg)  2\left(\metric^{\iota M } \metric^{\alpha +}  - \metric^{\iota +} \metric^{M\alpha} \right)
 	\\
 	&=
-	\int^{0}_{\sigma-z}\dx \tau\int _0^1 \dx u u^{\frac{d}{2}-1} \overline u ^{\frac{d}{2}-2}\int \ddx x  \partial^\zeta \partial^\eta A_\iota^{A'}(z n + \overline u \tau n) \frac{4\Gamma(d)}{4^2\pi^{d}}\bigg( \frac{ -x_\mu x_\alpha x_\eta x_\zeta}{\left(-x^2+\imag \epsilon\right)^{d}} 
+	\int^{0}_{\sigma-z}\dx \tau\int _0^1 \dx u u^{\frac{d}{2}-1} \overline u ^{\frac{d}{2}-2}\int \ddx x  \frac{\partial^\zeta \partial^\eta}{2} A_\iota^{A'}(z n + \overline u \tau n) \frac{4\Gamma(d)}{4^2\pi^{d}}\bigg( \frac{ -x_\mu x_\alpha x_\eta x_\zeta}{\left(-x^2+\imag \epsilon\right)^{d}} 
 	\bigg)  2\left(\metric^{\iota M } \metric^{\alpha +}  - \metric^{\iota +} \metric^{M\alpha} \right)
 	\\
 	&=
-	\int^{0}_{\sigma-z}\dx \tau\int _0^1 \dx u u^{\frac{d}{2}-1} \overline u ^{\frac{d}{2}-2} \partial^\zeta \partial^\eta A_\iota^{A'}(z n + \overline u \tau n) \frac{4\Gamma(d)}{4^2\pi^{d}}\frac{\imag \pi^{\frac{d}{2}}}{4(2-\frac{d}{2})\Gamma\left(d\right)}\left(\metric_{\mu\alpha}\metric_{\eta \zeta} + \metric_{\mu \eta} \metric_{\alpha \zeta} +\metric_{\mu \zeta}\metric_{\alpha \eta}\right)  2\left(\metric^{\iota M } \metric^{\alpha +}  - \metric^{\iota +} \metric^{M\alpha} \right)
+	\int^{0}_{\sigma-z}\dx \tau\int _0^1 \dx u u^{\frac{d}{2}-1} \overline u ^{\frac{d}{2}-2} \frac{\partial^\zeta \partial^\eta}{2} A_\iota^{A'}(z n + \overline u \tau n) \frac{4\Gamma(d)}{4^2\pi^{d}}\frac{\imag \pi^{\frac{d}{2}}}{4(2-\frac{d}{2})\Gamma\left(d\right)}\left(\metric_{\mu\alpha}\metric_{\eta \zeta} + \metric_{\mu \eta} \metric_{\alpha \zeta} +\metric_{\mu \zeta}\metric_{\alpha \eta}\right)  2\left(\metric^{\iota M } \metric^{\alpha +}  - \metric^{\iota +} \metric^{M\alpha} \right)
 	\\
 	&=
-	\int^{0}_{\sigma-z} \dx \tau\int _0^1 \dx u u^{\frac{d}{2}-1} \overline u ^{\frac{d}{2}-2}  \frac{4\Gamma(d)}{4^2\pi^{d}}\frac{\imag \pi^{\frac{d}{2}}}{4(2-\frac{d}{2})\Gamma\left(d\right)}2\cdot 2 \partial_+ \left( \partial_\mu A_+ - \partial_+ A_\mu\right)(zn+\overline u \tau n)
+	\int^{0}_{\sigma-z} \dx \tau\int _0^1 \dx u u^{\frac{d}{2}-1} \overline u ^{\frac{d}{2}-2}  \frac{4\Gamma(d)}{4^2\pi^{d}}\frac{\imag \pi^{\frac{d}{2}}}{4(2-\frac{d}{2})\Gamma\left(d\right)}\frac{2}{2}\cdot 2 \partial_+ \left( \partial_\mu A_+ - \partial_+ A_\mu\right)(zn+\overline u \tau n)
 	\\
 	&=
-	\int^{0}_{\sigma-z} \dx \tau\frac{\imag}{4\pi^{\frac{d}{2}}\epsilon}\int _0^1 \dx u u^{\frac{d}{2}-1} \overline u ^{\frac{d}{2}-2} \partial_+ \left( \partial_\mu A_+^{A'} - \partial_+ A_\mu^{A'}\right)(zn+\overline u \tau n)
+	\int^{0}_{\sigma-z} \dx \tau\frac{\imag}{8\pi^{\frac{d}{2}}\epsilon}\int _0^1 \dx u u^{\frac{d}{2}-1} \overline u ^{\frac{d}{2}-2} \partial_+ \left( \partial_\mu A_+^{A'} - \partial_+ A_\mu^{A'}\right)(zn+\overline u \tau n)
 \end{align}
 
 This is an important intermediate result. 

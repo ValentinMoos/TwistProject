@@ -25,8 +25,42 @@ d dim integrals from P$\&$S
 \int \frac{\dx ^d l}{(2\pi)^d} \frac{l^	\mu l^\nu}{\left(l^2-\Delta\right)^n} 
 &=
 \frac{(-1)^{n-1}\imag}{(4\pi)^{d/2}}\frac{\metric^{\mu \nu}}{2} \frac{\Gamma\left(n-\frac{d}{2}-1\right)}{\Gamma(n)}\left(\frac{1}{\Delta}\right)^{n-\frac{d}{2}-1}
+\\
+\int \frac{\dx ^d l}{(2\pi)^d} \frac{l^	\mu l^\nu l^\rho l^\omega}{\left(l^2-\Delta\right)^n} 
+&=
+\frac{(-1)^{n}\imag}{(4\pi)^{d/2}}\frac{E^{\mu \nu \rho \omega}}{4} \frac{\Gamma\left(n-\frac{d}{2}-2\right)}{\Gamma(n)}\left(\frac{1}{\Delta}\right)^{n-\frac{d}{2}-2}
+\\
+\int \frac{\ddx k}{(2\pi)^d}\frac{k^{2a}}{(k^2-\Delta)^b}
+&=
+(-1)^{a-b}\imag \frac{1}{(4\pi)^{\frac{d}{2}} } \frac{\Gamma\left(a+\frac{d}{2}\right)\Gamma\left(b-a-\frac{d}{2}\right)}{\Gamma\left(b\right)\Gamma\left(\frac{d}{2}\right)}\left(\frac{1}{\Delta}\right)^{b-a-\frac{d}{2}}
 \end{align}
-
+last formula (B.35) in \url{https://www.uni-muenster.de/imperia/md/content/physik_tp/lectures/ss2017/standard_model/Vorlesung/app_b.pdf}
+for two variable integrals(derived on my own)
+\begin{align}
+	\int \ddx x \int \ddx y \frac{1}{\left(-ax^2-by^2+m^2\right)^n} 
+	&=
+	-a^{-\frac{d}{2}}b^{-\frac{d}{2}}\pi^d \frac{\Gamma\left(n-d\right)}{\Gamma(n)}(m^2)^{d-n}
+	\\
+	\int \ddx x \int \ddx y \frac{x^\mu x^\nu}{\left(-ax^2-by^2+m^2\right)^n}
+	&=
+	a^{-\frac{d}{2}-1}b^{-\frac{d}{2}}\pi^d\frac{\metric^{\mu \nu}}{2} \frac{\Gamma\left(n-d-1\right)}{\Gamma(n)}(m^2)^{d-n+1}
+	\\
+	\int \ddx x \int \ddx y \frac{x^\mu x^\nu y^\alpha y^\beta}{\left(-ax^2-by^2+m^2\right)^n}
+	&=
+	-a^{-\frac{d}{2}-1}b^{-\frac{d}{2}-1}\pi^d\frac{\metric^{\mu \nu}\metric^{\alpha \beta}}{4} \frac{\Gamma\left(n-d-2\right)}{\Gamma(n)}(m^2)^{d-n+2}
+	\\
+	\int \ddx x \int \ddx y \frac{x^\mu x^\nu x^\theta x^\phi}{\left(-ax^2-by^2+m^2\right)^n}
+	&=
+	-a^{-\frac{d}{2}-2}b^{-\frac{d}{2}}\pi^d\frac{E^{\mu \nu \theta \phi }}{4} \frac{\Gamma\left(n-d-2\right)}{\Gamma(n)}(m^2)^{d-n+2}
+	\\
+	\int \ddx x \int \ddx y \frac{x^\mu x^\nu y^\alpha y^\beta y^\gamma y^\delta }{\left(-ax^2-by^2+m^2\right)^n}
+	&=
+	a^{-\frac{d}{2}-1}b^{-\frac{d}{2}-2}\pi^d\frac{E^{\alpha \beta \gamma \delta}\metric^{\mu \nu} }{8} \frac{\Gamma\left(n-d-3\right)}{\Gamma(n)}(m^2)^{d-n+3}
+	\\
+	\int \ddx x \int \ddx y \frac{y^\alpha y^\beta y^\gamma y^\delta y^\mu y^\nu }{\left(-ax^2-by^2+m^2\right)^n}
+	&=
+	a^{-\frac{d}{2}-3}b^{-\frac{d}{2}}\pi^d\frac{E_6^{\alpha \beta \gamma \delta \mu \nu}}{16} \frac{\Gamma\left(n-d-3\right)}{\Gamma(n)}(m^2)^{d-n+3}
+\end{align}
 Crucial formulae:
 
 \begin{align}
